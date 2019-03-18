@@ -1,5 +1,4 @@
 from .userinfocard import InfoCard
-from .bungieuser import Bungieuser
 
 class Membership:
 	def __init__(self, requestData):
@@ -10,5 +9,4 @@ class Membership:
 		for membershipInfoCard in self.other_memberships:
 			self.other_memberships.append(InfoCard(membershipInfoCard))
 	
-		self._userData = self.rawRequestData["bungieNetUser"]
-		self.user = BungieUser(self._userData)
+		self.user_id = self.rawRequestData["bungieNetUser"]["membershipId"]
