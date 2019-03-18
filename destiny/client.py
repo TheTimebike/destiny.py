@@ -26,10 +26,10 @@ class Client:
         else:
             self.userAgent = "{0}/{1}/{2}".format(appName, appVersion, appID)
             
-    def get_user(self, userID):
+    def get_user(self, bungieUserID):
         if self.gatewaySession == None:
             raise # Error, no client session
-        self._userData = self.gatewaySession.getRequest(USER_ROUTE + "/GetBungieNetUserById/{0}/".format(userID))
+        self._userData = self.gatewaySession.getRequest(USER_ROUTE + "/GetBungieNetUserById/{0}/".format(bungieUserID))
         return BungieUser(self._userData)
 
     def get_user_by_name(self, searchQuery):
@@ -37,6 +37,11 @@ class Client:
             raise # Error, no client session
         self._possibleUsers = self.gatewaySession.getRequest(USER_ROUTE + "/SearchUsers/{0}".format(searchQuery))
         self._userObjectList = []
-        for userData in self._possibleUsers:
-            self._userObjectList.append(BungieUser(userData))
+        for bungieUserData in self._possibleUsers:
+            self._userObjectList.append(BungieUser(bungieUserData))
         return self._userObjectList
+    
+    def get_membership_type(self, bungieUserID):
+        if self.gatewaySession = None:
+            raise # Error, no client session
+        
