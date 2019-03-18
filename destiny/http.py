@@ -15,7 +15,9 @@ class GatewaySession:
         self.gatewaySession.headers.update({"X-API-KEY": apiToken})
         
     def getRequest(self, request, headers=None):
-        self.gatewaySession.get(request)
+        self._requestData = self.gatewaySession.get(request)
+        print(self._requestData)
+        return self._requestData
     
     def postRequest(self, request, headers=None):
-        self.gatewaySession.post(request)
+        self._requestData = self.gatewaySession.post(request)
