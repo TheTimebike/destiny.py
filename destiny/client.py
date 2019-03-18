@@ -1,5 +1,3 @@
-import asyncio
-
 from .http import GatewaySession
 from .bungieuser import BungieUser
 
@@ -8,10 +6,9 @@ class Client:
     USER_ROUTE = "https://www.bungie.net/Platform/User"
     GROUP_ROUTE = "https://www.bungie.net/Platform/GroupV2"
     
-    def __init__(self, appName, loop=None):
+    def __init__(self, appName):
         self.userAgent = None
         self.apiToken = None
-        self._loop = asyncio.get_event_loop() if loop is None else loop
         
     def run(self, apiToken):
         if self.userAgent = None:
