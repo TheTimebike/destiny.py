@@ -1,8 +1,10 @@
+from .membership import Membership
+
 class BungieUser:
 	def __init__(self, requestData):
 		self.rawRequestData = requestData
 		
-		self.membershipID = self.rawRequestData["membershipId"]
+		self.membership = Membership(self.rawRequestData["membershipId"])
 		
 		self.username = self.rawRequestData["uniqueName"]
 		self.display_name = self.rawRequestData["displayName"]
