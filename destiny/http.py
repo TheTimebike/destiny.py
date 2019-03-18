@@ -1,7 +1,10 @@
 import requests
 
 class GatewaySession:
-    BASE_ROUTE = "" # API gateway here
+    BASE_ROUTE = "https://www.bungie.net/Platform/Destiny2/" # API gateway here
+    USER_ROUTE = "https://www.bungie.net/Platform/User/"
+    GROUP_ROUTE = "https://www.bungie.net/Platform/GroupV2/"
+    
     def __init__(self, apiToken=None, userAgent=None):
         if apiToken == None:
             raise # error
