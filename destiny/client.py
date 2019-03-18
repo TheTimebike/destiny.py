@@ -26,8 +26,17 @@ class Client:
         else:
             self.userAgent = "{0}/{1}/{2}".format(appName, appVersion, appID)
             
-    def getUserFromID(self, userID):
+    def getUserByID(self, userID):
         if self.gatewaySession == None:
             raise # Error, no client session
         self._userData = self.gatewaySession.getRequest(USER_ROUTE + "/GetBungieNetUserById/{0}/".format(userID))
         return BungieUser(self._userData)
+
+    def getUserByName(self, searchQuery):
+        if self.gatewaySession = None:
+            raise # Error, no client session
+        self._possibleUsers = self.gatewaySession.getRequest(USER_ROUTE + "/SearchUsers/{0}".format(searchQuery))
+        self._userObjectList = []
+        for userData in self._possibleUsers:
+            self._userObjectList.append(BungieUser(userData))
+        return self._userObjectList
