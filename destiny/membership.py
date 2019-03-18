@@ -9,4 +9,4 @@ class Membership:
 		for membershipInfoCard in self.other_memberships:
 			self.other_memberships.append(InfoCard(membershipInfoCard))
 	
-		self.user_id = self.rawRequestData["bungieNetUser"]["membershipId"]
+		self.membership_id = self.rawRequestData["bungieNetUser"]["membershipId"]
