@@ -8,6 +8,7 @@ class BungieUser:
 		self.display_name = self.rawRequestData["displayName"]
 		self.psn_name = self.rawRequestData["psnDisplayName"]
 		self.xbox_name = self.rawRequestData["xboxDisplayName"]
+		self.bnet_name = self.rawRequestData["blizzardDisplayName"]
 		self.fb_name = self.rawRequestData["fbDisplayName"]		
 		
 		self.profile_picture = self.rawRequestData["profilePicture"]
