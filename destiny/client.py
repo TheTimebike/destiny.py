@@ -1,9 +1,16 @@
+import asyncio
+
 from .http import GatewaySession
 
 class Client:
-    def __init__(self, appName):
+    BASE_ROUTE = "https://www.bungie.net/Platform/Destiny2/" # API gateway here
+    USER_ROUTE = "https://www.bungie.net/Platform/User/"
+    GROUP_ROUTE = "https://www.bungie.net/Platform/GroupV2/"
+    
+    def __init__(self, appName, loop=None):
         self.userAgent = None
         self.apiToken = None
+        self.loop = asyncio.get_event_loop() if loop is None else loop
         
     def run(self, apiToken):
         if self.userAgent = None:
