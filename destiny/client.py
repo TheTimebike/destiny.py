@@ -38,16 +38,19 @@ class Client:
         else:
             self.userAgent = "{0}/{1}/{2}".format(appName, appVersion, appID)
             
-    async def get_user(self, bungieMembershipID):
+    async def get_user(self, bungieMembershipID, membershipType=-1):
         if self.gatewaySession == None:
             raise SyntaxError # Error, no client session
-        self._userData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Users/GetBungieNetUserById/{0}/".format(bungieMembershipID))
-        return BungieUser(self._userData)
+        self._userData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/User/GetMembershipsById/{0}/{1}".format(bungieMembershipID, membershipType))
+        print(self._userData["Response"])
+        if self._userData["Response"].get("bungieNetUser", None) != None:
+            return BungieUser(self._userData["Response"]["bungieNetUser"])
+        raise SyntaxError # Error, could not find bungie account
 
     async def search_for_user(self, name, membershipType=-1):
         if self.gatewaySession == None:
             raise SyntaxError # Error, no client session
-        self._possibleUsers = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{1}/{0}".format(membershipType, name))
+        self._possibleUsers = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{0}/{1}".format(membershipType, name))
         self._userObjectList = []
         for bungieUserData in self._possibleUsers["Response"]:
             self._userObjectList.append(InfoCard(bungieUserData))

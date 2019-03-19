@@ -21,7 +21,8 @@ class GatewaySession:
                 #print(self._requestData)
             return self._requestData
         except Exception as ex:
-            #print(ex)
+            print("Error in HTTP")
+            return await self.session.get(request, headers=self.headers)
     
     async def postRequest(self, request):
         self._requestData = self.session.post(request, headers=self.headers).json()
