@@ -32,7 +32,7 @@ class Client:
     def close(self):
         self._session.close()
 
-    def setUserAgent(self, appName, appVersion, appID, appWebsite=None, appEmail=None):
+    def set_user_agent(self, appName, appVersion, appID, appWebsite=None, appEmail=None):
         if appWebsite != None or appEmail != None:
             self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(appName, appVersion, appID, appWebsite, appEmail)
         else:
