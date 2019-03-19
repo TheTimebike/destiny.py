@@ -3,6 +3,9 @@ client = destiny.Client()
 
 @client.mainfunc
 async def main():
+    """
+    Example for fetching the Destiny manifest
+    """
     destinyManifest = await client.get_manifest()
     print(destinyManifest)
     client.close()
