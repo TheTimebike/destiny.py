@@ -16,8 +16,7 @@ class Client:
         
     def mainfunc(self, coro):
         setattr(self, "mainFunction", coro)
-        print("Added mainfunction")
-
+        
     def run(self, apiToken=None):
 
         self.apiToken = apiToken
@@ -43,9 +42,9 @@ class Client:
             raise NoGatewayException
 
         self._userData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/User/GetMembershipsById/{0}/{1}".format(bungieMembershipID, membershipType))
-        print(self._userData["Response"])
-        if self._userData["Response"].get("bungieNetUser", None) != None:
-            return BungieUser(self._userData["Response"]["bungieNetUser"])
+
+        if self._userData.get("Response", None) != None:
+            return self._userData["Response"]
         raise NotFound
 
     async def search_for_user(self, name, membershipType=-1):
@@ -53,9 +52,13 @@ class Client:
             raise NoGatewayException
 
         self._possibleUsers = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{0}/{1}".format(membershipType, name))
+        
         self._userObjectList = []
         for bungieUserData in self._possibleUsers["Response"]:
-            self._userObjectList.append(InfoCard(bungieUserData))
+            self._userObjectList.append(bungieUserData)
+
+        if len(self._userObjectList) == 0:
+            raise NotFound
         return self._userObjectList
     
     async def get_membership_type(self, bungieMembershipID):
@@ -65,5 +68,6 @@ class Client:
     async def get_manifest(self):
         if self.gatewaySession == None:
             raise NoGatewayException
-        return await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")
+        
+        return await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"]
         

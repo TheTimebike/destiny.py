@@ -1,6 +1,10 @@
 import aiohttp
 import asyncio
 
+import http.cookies
+http.cookies._is_legal_key = lambda _: True
+from .errors import HTTPException
+
 class GatewaySession:
     BASE_ROUTE = "https://www.bungie.net/Platform/Destiny2/" # API gateway here
     USER_ROUTE = "https://www.bungie.net/Platform/User/"
@@ -18,11 +22,11 @@ class GatewaySession:
         try:
             async with self.session.get(request, headers=self.headers) as _data:
                 self._requestData = await _data.json()
-                #print(self._requestData)
             return self._requestData
+        except http.cookies.CookieError:
+            pass
         except Exception as ex:
-            print("Error in HTTP")
-            return await self.session.get(request, headers=self.headers)
+            raise HTTPException
     
     async def postRequest(self, request):
         self._requestData = self.session.post(request, headers=self.headers).json()
