@@ -52,7 +52,7 @@ class Client:
 
         if self._userData.get("Response", None) != None:
             return self._convert(self._userData["Response"])
-        raise NotFound
+        return None
 
     async def search_for_user(self, name, membershipType=-1):
         if self.gatewaySession == None:
@@ -65,7 +65,7 @@ class Client:
             self._userObjectList.append(self._convert(bungieUserData))
 
         if len(self._userObjectList) == 0:
-            raise NotFound
+            return None
         return self._userObjectList
     
     async def get_membership_type(self, bungieMembershipID):
@@ -77,4 +77,16 @@ class Client:
             raise NoGatewayException
         
         return self._convert(await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"])
+        
+    async def get_profile(self, membershipID, membershipType=-1, components=[]):
+        if self.gatewaySession == None:
+            raise NoGatewayException
+
+        componentList = ",".join(components)
+
+        self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/?components={2}".format(membershipType, membershipID, componentList))
+        if self._profileData.get("Response", None) != None:
+            return self._convert(self._profileData["Response"])
+        return None
+
         

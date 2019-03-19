@@ -23,8 +23,6 @@ class GatewaySession:
             async with self.session.get(request, headers=self.headers) as _data:
                 self._requestData = await _data.json()
             return self._requestData
-        except http.cookies.CookieError:
-            pass
         except Exception as ex:
             raise HTTPException
     
