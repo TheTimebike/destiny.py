@@ -12,12 +12,13 @@ class GatewaySession:
         self.userAgent = userAgent
         
         self.gatewaySession = requests.Session()
-        self.gatewaySession.headers.update({"X-API-KEY": apiToken})
+        self.gatewaySession.headers.update({"X-API-Key": apiToken})
         
     def getRequest(self, request, headers=None):
+        print(request)
         self._requestData = self.gatewaySession.get(request)
         print(self._requestData)
-        return self._requestData
+        return self._requestData.json()
     
     def postRequest(self, request, headers=None):
-        self._requestData = self.gatewaySession.post(request)
+        self._requestData = self.gatewaySession.post(request).json()
