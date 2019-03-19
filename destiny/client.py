@@ -2,8 +2,7 @@ import aiohttp
 import asyncio
 
 from .http import GatewaySession
-from .bungieuser import BungieUser
-from .userinfocard import InfoCard
+from .errors import *
 
 class Client:    
     def __init__(self, loop=None):
@@ -19,11 +18,12 @@ class Client:
         setattr(self, "mainFunction", coro)
         print("Added mainfunction")
 
-    def run(self, apiToken):
-        if self.userAgent == None:
-            raise SyntaxError # Error, provided no token, use setUserAgent func
+    def run(self, apiToken=None):
+
         self.apiToken = apiToken
-        
+        if self.apiToken == None:
+            raise TokenException   
+
         self.gatewaySession = GatewaySession(self._session, self.apiToken, self.userAgent)
 
         self._loop.run_until_complete(self.mainFunction())
@@ -40,16 +40,18 @@ class Client:
             
     async def get_user(self, bungieMembershipID, membershipType=-1):
         if self.gatewaySession == None:
-            raise SyntaxError # Error, no client session
+            raise NoGatewayException
+
         self._userData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/User/GetMembershipsById/{0}/{1}".format(bungieMembershipID, membershipType))
         print(self._userData["Response"])
         if self._userData["Response"].get("bungieNetUser", None) != None:
             return BungieUser(self._userData["Response"]["bungieNetUser"])
-        raise SyntaxError # Error, could not find bungie account
+        raise NotFound
 
     async def search_for_user(self, name, membershipType=-1):
         if self.gatewaySession == None:
-            raise SyntaxError # Error, no client session
+            raise NoGatewayException
+
         self._possibleUsers = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{0}/{1}".format(membershipType, name))
         self._userObjectList = []
         for bungieUserData in self._possibleUsers["Response"]:
@@ -58,10 +60,10 @@ class Client:
     
     async def get_membership_type(self, bungieMembershipID):
         if self.gatewaySession == None:
-            raise SyntaxError # Error, no client session
+            raise NoGatewayException
     
     async def get_manifest(self):
         if self.gatewaySession == None:
-            raise SyntaxError # Error, no client session
+            raise NoGatewayException
         return await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")
         
