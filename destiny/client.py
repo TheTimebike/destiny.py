@@ -1,5 +1,8 @@
 import aiohttp
 import asyncio
+import json
+from collections import namedtuple
+from types import SimpleNamespace as Namespace
 
 from .http import GatewaySession
 from .errors import *
@@ -16,7 +19,7 @@ class Client:
         
     def mainfunc(self, coro):
         setattr(self, "mainFunction", coro)
-        
+
     def run(self, apiToken=None):
 
         self.apiToken = apiToken
@@ -31,6 +34,10 @@ class Client:
     def close(self):
         self._session.close()
 
+    def _convert(self, data):
+        self._jsonDump = json.dumps(data)
+        return json.loads(self._jsonDump, object_hook=lambda d: Namespace(**d))
+
     def set_user_agent(self, appName, appVersion, appID, appWebsite=None, appEmail=None):
         if appWebsite != None or appEmail != None:
             self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(appName, appVersion, appID, appWebsite, appEmail)
@@ -44,7 +51,7 @@ class Client:
         self._userData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/User/GetMembershipsById/{0}/{1}".format(bungieMembershipID, membershipType))
 
         if self._userData.get("Response", None) != None:
-            return self._userData["Response"]
+            return self._convert(self._userData["Response"])
         raise NotFound
 
     async def search_for_user(self, name, membershipType=-1):
@@ -55,7 +62,7 @@ class Client:
         
         self._userObjectList = []
         for bungieUserData in self._possibleUsers["Response"]:
-            self._userObjectList.append(bungieUserData)
+            self._userObjectList.append(self._convert(bungieUserData))
 
         if len(self._userObjectList) == 0:
             raise NotFound
@@ -69,5 +76,5 @@ class Client:
         if self.gatewaySession == None:
             raise NoGatewayException
         
-        return await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"]
+        return self._convert(await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"])
         
