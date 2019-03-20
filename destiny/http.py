@@ -20,6 +20,7 @@ class GatewaySession:
         
     async def getRequest(self, request):
         try:
+            #print(request)
             async with self.session.get(request, headers=self.headers) as _data:
                 self._requestData = await _data.json()
             return self._requestData

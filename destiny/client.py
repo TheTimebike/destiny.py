@@ -89,4 +89,16 @@ class Client:
             return self._convert(self._profileData["Response"])
         return None
 
+    async def get_character(self, membershipID, characterID, membershipType=-1, components=[]):
+        if self.gatewaySession == None:
+            raise NoGatewayException
+
+        componentList = ",".join(components)
+
+        self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/?components={3}".format(membershipType, membershipID, characterID, componentList))
+        if self._profileData.get("Response", None) != None:
+            return self._convert(self._profileData["Response"])
+        elif self._profileData.get("ErrorStatus", None) != None:
+            return self._profileData
+        return None
         
