@@ -8,6 +8,9 @@ from .http import GatewaySession
 from .errors import *
 from .character import Character
 from .profile_bundle import ProfileBundle
+from .membership import Membership
+from .bungie_profile import BungieProfile
+from .components import Components
 
 class Client:    
     def __init__(self, loop=None):
@@ -60,14 +63,14 @@ class Client:
         if self.gatewaySession == None:
             raise NoGatewayException
 
-        self._possibleUsers = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{0}/{1}".format(membershipType, name))
+        self._possibleUsers = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{0}/{1}/".format(membershipType, name))
         
         self._userObjectList = []
         for bungieUserData in self._possibleUsers["Response"]:
-            self._userObjectList.append(self._convert(bungieUserData))
+            self._userObjectList.append(Membership(bungieUserData))
 
         if len(self._userObjectList) == 0:
-            return None
+            return []
         return self._userObjectList
     
     async def get_membership_type(self, bungieMembershipID):
@@ -78,7 +81,7 @@ class Client:
         if self.gatewaySession == None:
             raise NoGatewayException
         
-        return self._convert(await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"])
+        return await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"]
         
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         if self.gatewaySession == None:
@@ -88,7 +91,10 @@ class Client:
 
         self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/?components={2}".format(membershipType, membershipID, componentList))
         if self._profileData.get("Response", None) != None:
-            return self._convert(self._profileData["Response"])
+            self._components = Components()
+            for key, value in self._profileData["Response"].items():
+                setattr(self._components, key, value["data"])
+            return self._components
         return None
 
     async def get_character(self, membershipID, characterID, membershipType=-1, components=[]):

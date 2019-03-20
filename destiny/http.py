@@ -25,7 +25,7 @@ class GatewaySession:
                 self._requestData = await _data.json()
             with open("./Logs.json", "a+") as out:
                 withUrl = self._requestData
-                withUrl["Response"]["request"] = request
+                withUrl["request"] = request
                 json.dump(withUrl, out, indent=4)
             return self._requestData
         except Exception as ex:
