@@ -26,12 +26,16 @@ class Client:
 
     def auth(self, authClass):
         setattr(self, "auth", authClass)
+        print("!!")
 
     def run(self):
-        self.apiToken = self.auth.apiToken
-        if self.apiToken == None:
-            raise TokenException   
+        print("!")
+        if self.auth.appEmail != None or self.auth.appWebsite != None:
+            self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(self.auth.appName, self.auth.appVersion, self.auth.appID, self.auth.appWebsite, self.auth.appEmail)
+        else:
+            self.userAgent = "{0}/{1}/{2}".format(appName, appVersion, appID)
 
+        self.apiToken = self.auth.apiToken 
         self.gatewaySession = GatewaySession(self._session, self.apiToken, self.userAgent)
 
         self._loop.run_until_complete(self.mainFunction())
@@ -45,12 +49,6 @@ class Client:
         for key, value in responseData["Response"].items():
             setattr(self._components, key, value["data"])
         return self._components
-
-    def set_user_agent(self, appName, appVersion, appID, appWebsite=None, appEmail=None):
-        if appWebsite != None or appEmail != None:
-            self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(appName, appVersion, appID, appWebsite, appEmail)
-        else:
-            self.userAgent = "{0}/{1}/{2}".format(appName, appVersion, appID)
             
     async def get_user(self, bungieMembershipID, membershipType=-1):
         if self.gatewaySession == None:
