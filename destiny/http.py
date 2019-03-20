@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+import json
 
 import http.cookies
 http.cookies._is_legal_key = lambda _: True
@@ -20,11 +21,15 @@ class GatewaySession:
         
     async def getRequest(self, request):
         try:
-            #print(request)
             async with self.session.get(request, headers=self.headers) as _data:
                 self._requestData = await _data.json()
+            with open("./Logs.json", "a+") as out:
+                withUrl = self._requestData
+                withUrl["Response"]["request"] = request
+                json.dump(withUrl, out, indent=4)
             return self._requestData
         except Exception as ex:
+            print(ex)
             raise HTTPException
     
     async def postRequest(self, request):

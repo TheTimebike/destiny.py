@@ -1,0 +1,1629 @@
+{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018468394612",
+                "membershipType": 4,
+                "characterId": "2305843009351674058",
+                "dateLastPlayed": "2019-03-16T21:17:53Z",
+                "minutesPlayedThisSession": "58",
+                "minutesPlayedTotal": "14690",
+                "light": 636,
+                "stats": {
+                    "1935470627": 636,
+                    "2996146975": 2,
+                    "392767087": 6,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 3655393761,
+                "raceType": 2,
+                "classType": 0,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/dcfe74b7a343dd28bd45eee4ea59a1f7.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/486031c3ec94ab0906308589eb2a6d73.jpg",
+                "emblemHash": 3860733295,
+                "emblemColor": {
+                    "red": 24,
+                    "green": 3,
+                    "blue": 2,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 482000,
+                    "level": 50,
+                    "levelCap": 50,
+                    "stepIndex": 50,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 0
+                },
+                "baseCharacterLevel": 50,
+                "percentToNextLevel": 0.0,
+                "titleRecordHash": 2182090828
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/Character/2305843009351674058/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "destinyMemberships": [
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_xbl.png",
+                "membershipType": 1,
+                "membershipId": "4611686018440571747",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_psn.png",
+                "membershipType": 2,
+                "membershipId": "4611686018464828555",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "",
+                "membershipType": 4,
+                "membershipId": "4611686018468394612",
+                "displayName": "TheTimebike"
+            }
+        ],
+        "bungieNetUser": {
+            "membershipId": "10814042",
+            "uniqueName": "10814042",
+            "displayName": "TheTimebike",
+            "profilePicture": 70591,
+            "profileTheme": 93,
+            "userTitle": 0,
+            "successMessageFlags": "0",
+            "isDeleted": false,
+            "about": "",
+            "firstAccess": "2015-05-28T18:56:30.187Z",
+            "lastUpdate": "2018-09-06T14:44:21.529Z",
+            "psnDisplayName": "TheTimebike",
+            "xboxDisplayName": "TheTimebike",
+            "showActivity": true,
+            "locale": "en",
+            "localeInheritDefault": true,
+            "showGroupMessaging": true,
+            "profilePicturePath": "/img/profile/avatars/bungie_day_15_04.jpg",
+            "profileThemeName": "d2cover",
+            "userTitleDisplay": "Newbie",
+            "statusText": "",
+            "statusDate": "0001-01-01T00:00:00Z",
+            "blizzardDisplayName": "TheTimebike#2349"
+        },
+        "request": "https://www.bungie.net/Platform/User/GetMembershipsById/4611686018464828555/-1"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 1,
+                    "membershipId": "4611686018440571747",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2017-12-02T13:15:39Z",
+                "versionsOwned": 0,
+                "characterIds": [
+                    "2305843009313524499",
+                    "2305843009313524500",
+                    "2305843009313524501"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524499",
+                "dateLastPlayed": "2017-12-02T12:37:53Z",
+                "minutesPlayedThisSession": "0",
+                "minutesPlayedTotal": "0",
+                "light": 100,
+                "stats": {
+                    "1935470627": 100,
+                    "2996146975": 0,
+                    "392767087": 1,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 0,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524499/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524500",
+                "dateLastPlayed": "2017-12-02T13:15:39Z",
+                "minutesPlayedThisSession": "32",
+                "minutesPlayedTotal": "32",
+                "light": 10,
+                "stats": {
+                    "1935470627": 10,
+                    "2996146975": 5,
+                    "392767087": 1,
+                    "1943323491": 0
+                },
+                "raceHash": 3887404748,
+                "genderHash": 3111576190,
+                "classHash": 671679327,
+                "raceType": 0,
+                "classType": 1,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 3125,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 3125,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 69.44444
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524500/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524501",
+                "dateLastPlayed": "2017-12-02T12:37:53Z",
+                "minutesPlayedThisSession": "0",
+                "minutesPlayedTotal": "0",
+                "light": 100,
+                "stats": {
+                    "1935470627": 100,
+                    "2996146975": 1,
+                    "392767087": 4,
+                    "1943323491": 1
+                },
+                "raceHash": 3887404748,
+                "genderHash": 2204441813,
+                "classHash": 3655393761,
+                "raceType": 0,
+                "classType": 0,
+                "genderType": 1,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 0,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524501/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 2,
+                    "membershipId": "4611686018464828555",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2018-03-29T15:48:19Z",
+                "versionsOwned": 3,
+                "characterIds": [
+                    "2305843009264506585",
+                    "2305843009264506586",
+                    "2305843009277409874"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018464828555",
+                "membershipType": 2,
+                "characterId": "2305843009264506585",
+                "dateLastPlayed": "2018-02-14T14:58:27Z",
+                "minutesPlayedThisSession": "64",
+                "minutesPlayedTotal": "20153",
+                "light": 313,
+                "stats": {
+                    "1935470627": 313,
+                    "2996146975": 3,
+                    "392767087": 5,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 671679327,
+                "raceType": 2,
+                "classType": 1,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/28fad62e9ed456e8ac25cefd0f5e0fc2.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/dce29b2e09a76727a484b745f4bac3cf.jpg",
+                "emblemHash": 3010885351,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 55,
+                    "blue": 57,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 196000,
+                    "level": 25,
+                    "levelCap": 25,
+                    "stepIndex": 25,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 10000
+                },
+                "baseCharacterLevel": 25,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/Character/2305843009264506585/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018464828555",
+                "membershipType": 2,
+                "characterId": "2305843009264506586",
+                "dateLastPlayed": "2018-02-04T10:45:17Z",
+                "minutesPlayedThisSession": "25",
+                "minutesPlayedTotal": "4731",
+                "light": 288,
+                "stats": {
+                    "1935470627": 288,
+                    "2996146975": 2,
+                    "392767087": 3,
+                    "1943323491": 8
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/28fad62e9ed456e8ac25cefd0f5e0fc2.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/dce29b2e09a76727a484b745f4bac3cf.jpg",
+                "emblemHash": 3010885351,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 55,
+                    "blue": 57,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 196000,
+                    "level": 25,
+                    "levelCap": 25,
+                    "stepIndex": 25,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 10000
+                },
+                "baseCharacterLevel": 25,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/Character/2305843009264506586/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018464828555",
+                "membershipType": 2,
+                "characterId": "2305843009277409874",
+                "dateLastPlayed": "2018-03-29T15:48:19Z",
+                "minutesPlayedThisSession": "16",
+                "minutesPlayedTotal": "4855",
+                "light": 288,
+                "stats": {
+                    "1935470627": 288,
+                    "2996146975": 1,
+                    "392767087": 7,
+                    "1943323491": 5
+                },
+                "raceHash": 3887404748,
+                "genderHash": 3111576190,
+                "classHash": 3655393761,
+                "raceType": 0,
+                "classType": 0,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/28fad62e9ed456e8ac25cefd0f5e0fc2.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/dce29b2e09a76727a484b745f4bac3cf.jpg",
+                "emblemHash": 3010885351,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 55,
+                    "blue": 57,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 196000,
+                    "level": 25,
+                    "levelCap": 25,
+                    "stepIndex": 25,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 10000
+                },
+                "baseCharacterLevel": 25,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/Character/2305843009277409874/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 4,
+                    "membershipId": "4611686018468394612",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2019-03-19T21:03:19Z",
+                "versionsOwned": 31,
+                "characterIds": [
+                    "2305843009343475210",
+                    "2305843009345105736",
+                    "2305843009351674058"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018468394612",
+                "membershipType": 4,
+                "characterId": "2305843009343475210",
+                "dateLastPlayed": "2019-03-18T22:44:44Z",
+                "minutesPlayedThisSession": "169",
+                "minutesPlayedTotal": "29958",
+                "light": 545,
+                "stats": {
+                    "1935470627": 545,
+                    "2996146975": 3,
+                    "392767087": 4,
+                    "1943323491": 6
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 671679327,
+                "raceType": 2,
+                "classType": 1,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/93dc869be8ac8bf38e18bdf4ead4b090.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/72d6d3e3cc5c486cc69eb7b87d1ddc7f.jpg",
+                "emblemHash": 1625974211,
+                "emblemColor": {
+                    "red": 54,
+                    "green": 0,
+                    "blue": 0,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 482000,
+                    "level": 50,
+                    "levelCap": 50,
+                    "stepIndex": 50,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 0
+                },
+                "baseCharacterLevel": 50,
+                "percentToNextLevel": 0.0,
+                "titleRecordHash": 2182090828
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/Character/2305843009343475210/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018468394612",
+                "membershipType": 4,
+                "characterId": "2305843009345105736",
+                "dateLastPlayed": "2019-03-19T21:03:19Z",
+                "minutesPlayedThisSession": "41",
+                "minutesPlayedTotal": "19293",
+                "light": 677,
+                "stats": {
+                    "1935470627": 677,
+                    "2996146975": 6,
+                    "392767087": 2,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 2204441813,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 1,
+                "emblemPath": "/common/destiny2_content/icons/fc2a2d570b2a6be1fff0de19e22504bd.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/cc46632e2fe7f7ec633b849b70389b12.jpg",
+                "emblemHash": 46275857,
+                "emblemColor": {
+                    "red": 16,
+                    "green": 5,
+                    "blue": 42,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 482000,
+                    "level": 50,
+                    "levelCap": 50,
+                    "stepIndex": 50,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 0
+                },
+                "baseCharacterLevel": 50,
+                "percentToNextLevel": 0.0,
+                "titleRecordHash": 2182090828
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/Character/2305843009345105736/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018468394612",
+                "membershipType": 4,
+                "characterId": "2305843009351674058",
+                "dateLastPlayed": "2019-03-16T21:17:53Z",
+                "minutesPlayedThisSession": "58",
+                "minutesPlayedTotal": "14690",
+                "light": 636,
+                "stats": {
+                    "1935470627": 636,
+                    "2996146975": 2,
+                    "392767087": 6,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 3655393761,
+                "raceType": 2,
+                "classType": 0,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/dcfe74b7a343dd28bd45eee4ea59a1f7.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/486031c3ec94ab0906308589eb2a6d73.jpg",
+                "emblemHash": 3860733295,
+                "emblemColor": {
+                    "red": 24,
+                    "green": 3,
+                    "blue": 2,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 482000,
+                    "level": 50,
+                    "levelCap": 50,
+                    "stepIndex": 50,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 0
+                },
+                "baseCharacterLevel": 50,
+                "percentToNextLevel": 0.0,
+                "titleRecordHash": 2182090828
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/Character/2305843009351674058/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "destinyMemberships": [
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_xbl.png",
+                "membershipType": 1,
+                "membershipId": "4611686018440571747",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_psn.png",
+                "membershipType": 2,
+                "membershipId": "4611686018464828555",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "",
+                "membershipType": 4,
+                "membershipId": "4611686018468394612",
+                "displayName": "TheTimebike"
+            }
+        ],
+        "bungieNetUser": {
+            "membershipId": "10814042",
+            "uniqueName": "10814042",
+            "displayName": "TheTimebike",
+            "profilePicture": 70591,
+            "profileTheme": 93,
+            "userTitle": 0,
+            "successMessageFlags": "0",
+            "isDeleted": false,
+            "about": "",
+            "firstAccess": "2015-05-28T18:56:30.187Z",
+            "lastUpdate": "2018-09-06T14:44:21.529Z",
+            "psnDisplayName": "TheTimebike",
+            "xboxDisplayName": "TheTimebike",
+            "showActivity": true,
+            "locale": "en",
+            "localeInheritDefault": true,
+            "showGroupMessaging": true,
+            "profilePicturePath": "/img/profile/avatars/bungie_day_15_04.jpg",
+            "profileThemeName": "d2cover",
+            "userTitleDisplay": "Newbie",
+            "statusText": "",
+            "statusDate": "0001-01-01T00:00:00Z",
+            "blizzardDisplayName": "TheTimebike#2349"
+        },
+        "request": "https://www.bungie.net/Platform/User/GetMembershipsById/4611686018464828555/-1"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 1,
+                    "membershipId": "4611686018440571747",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2017-12-02T13:15:39Z",
+                "versionsOwned": 0,
+                "characterIds": [
+                    "2305843009313524499",
+                    "2305843009313524500",
+                    "2305843009313524501"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524499",
+                "dateLastPlayed": "2017-12-02T12:37:53Z",
+                "minutesPlayedThisSession": "0",
+                "minutesPlayedTotal": "0",
+                "light": 100,
+                "stats": {
+                    "1935470627": 100,
+                    "2996146975": 0,
+                    "392767087": 1,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 0,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524499/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "destinyMemberships": [
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_xbl.png",
+                "membershipType": 1,
+                "membershipId": "4611686018440571747",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_psn.png",
+                "membershipType": 2,
+                "membershipId": "4611686018464828555",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "",
+                "membershipType": 4,
+                "membershipId": "4611686018468394612",
+                "displayName": "TheTimebike"
+            }
+        ],
+        "bungieNetUser": {
+            "membershipId": "10814042",
+            "uniqueName": "10814042",
+            "displayName": "TheTimebike",
+            "profilePicture": 70591,
+            "profileTheme": 93,
+            "userTitle": 0,
+            "successMessageFlags": "0",
+            "isDeleted": false,
+            "about": "",
+            "firstAccess": "2015-05-28T18:56:30.187Z",
+            "lastUpdate": "2018-09-06T14:44:21.529Z",
+            "psnDisplayName": "TheTimebike",
+            "xboxDisplayName": "TheTimebike",
+            "showActivity": true,
+            "locale": "en",
+            "localeInheritDefault": true,
+            "showGroupMessaging": true,
+            "profilePicturePath": "/img/profile/avatars/bungie_day_15_04.jpg",
+            "profileThemeName": "d2cover",
+            "userTitleDisplay": "Newbie",
+            "statusText": "",
+            "statusDate": "0001-01-01T00:00:00Z",
+            "blizzardDisplayName": "TheTimebike#2349"
+        },
+        "request": "https://www.bungie.net/Platform/User/GetMembershipsById/4611686018464828555/-1"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 1,
+                    "membershipId": "4611686018440571747",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2017-12-02T13:15:39Z",
+                "versionsOwned": 0,
+                "characterIds": [
+                    "2305843009313524499",
+                    "2305843009313524500",
+                    "2305843009313524501"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524499",
+                "dateLastPlayed": "2017-12-02T12:37:53Z",
+                "minutesPlayedThisSession": "0",
+                "minutesPlayedTotal": "0",
+                "light": 100,
+                "stats": {
+                    "1935470627": 100,
+                    "2996146975": 0,
+                    "392767087": 1,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 0,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524499/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "destinyMemberships": [
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_xbl.png",
+                "membershipType": 1,
+                "membershipId": "4611686018440571747",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "/img/theme/destiny/icons/icon_psn.png",
+                "membershipType": 2,
+                "membershipId": "4611686018464828555",
+                "displayName": "TheTimebike"
+            },
+            {
+                "iconPath": "",
+                "membershipType": 4,
+                "membershipId": "4611686018468394612",
+                "displayName": "TheTimebike"
+            }
+        ],
+        "bungieNetUser": {
+            "membershipId": "10814042",
+            "uniqueName": "10814042",
+            "displayName": "TheTimebike",
+            "profilePicture": 70591,
+            "profileTheme": 93,
+            "userTitle": 0,
+            "successMessageFlags": "0",
+            "isDeleted": false,
+            "about": "",
+            "firstAccess": "2015-05-28T18:56:30.187Z",
+            "lastUpdate": "2018-09-06T14:44:21.529Z",
+            "psnDisplayName": "TheTimebike",
+            "xboxDisplayName": "TheTimebike",
+            "showActivity": true,
+            "locale": "en",
+            "localeInheritDefault": true,
+            "showGroupMessaging": true,
+            "profilePicturePath": "/img/profile/avatars/bungie_day_15_04.jpg",
+            "profileThemeName": "d2cover",
+            "userTitleDisplay": "Newbie",
+            "statusText": "",
+            "statusDate": "0001-01-01T00:00:00Z",
+            "blizzardDisplayName": "TheTimebike#2349"
+        },
+        "request": "https://www.bungie.net/Platform/User/GetMembershipsById/4611686018464828555/-1"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 1,
+                    "membershipId": "4611686018440571747",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2017-12-02T13:15:39Z",
+                "versionsOwned": 0,
+                "characterIds": [
+                    "2305843009313524499",
+                    "2305843009313524500",
+                    "2305843009313524501"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524499",
+                "dateLastPlayed": "2017-12-02T12:37:53Z",
+                "minutesPlayedThisSession": "0",
+                "minutesPlayedTotal": "0",
+                "light": 100,
+                "stats": {
+                    "1935470627": 100,
+                    "2996146975": 0,
+                    "392767087": 1,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 0,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524499/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524500",
+                "dateLastPlayed": "2017-12-02T13:15:39Z",
+                "minutesPlayedThisSession": "32",
+                "minutesPlayedTotal": "32",
+                "light": 10,
+                "stats": {
+                    "1935470627": 10,
+                    "2996146975": 5,
+                    "392767087": 1,
+                    "1943323491": 0
+                },
+                "raceHash": 3887404748,
+                "genderHash": 3111576190,
+                "classHash": 671679327,
+                "raceType": 0,
+                "classType": 1,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 3125,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 3125,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 69.44444
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524500/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018440571747",
+                "membershipType": 1,
+                "characterId": "2305843009313524501",
+                "dateLastPlayed": "2017-12-02T12:37:53Z",
+                "minutesPlayedThisSession": "0",
+                "minutesPlayedTotal": "0",
+                "light": 100,
+                "stats": {
+                    "1935470627": 100,
+                    "2996146975": 1,
+                    "392767087": 4,
+                    "1943323491": 1
+                },
+                "raceHash": 3887404748,
+                "genderHash": 2204441813,
+                "classHash": 3655393761,
+                "raceType": 0,
+                "classType": 0,
+                "genderType": 1,
+                "emblemPath": "/common/destiny2_content/icons/6e9fff63b9322116c8a4c6943d440fea.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/2644a073545e566485629b95989b5f83.jpg",
+                "emblemHash": 2537840254,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 17,
+                    "blue": 55,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 4250,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 4250,
+                    "currentProgress": 0,
+                    "level": 1,
+                    "levelCap": 8,
+                    "stepIndex": 1,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 4500
+                },
+                "baseCharacterLevel": 1,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018440571747/Character/2305843009313524501/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 2,
+                    "membershipId": "4611686018464828555",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2018-03-29T15:48:19Z",
+                "versionsOwned": 3,
+                "characterIds": [
+                    "2305843009264506585",
+                    "2305843009264506586",
+                    "2305843009277409874"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018464828555",
+                "membershipType": 2,
+                "characterId": "2305843009264506585",
+                "dateLastPlayed": "2018-02-14T14:58:27Z",
+                "minutesPlayedThisSession": "64",
+                "minutesPlayedTotal": "20153",
+                "light": 313,
+                "stats": {
+                    "1935470627": 313,
+                    "2996146975": 3,
+                    "392767087": 5,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 671679327,
+                "raceType": 2,
+                "classType": 1,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/28fad62e9ed456e8ac25cefd0f5e0fc2.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/dce29b2e09a76727a484b745f4bac3cf.jpg",
+                "emblemHash": 3010885351,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 55,
+                    "blue": 57,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 196000,
+                    "level": 25,
+                    "levelCap": 25,
+                    "stepIndex": 25,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 10000
+                },
+                "baseCharacterLevel": 25,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/Character/2305843009264506585/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018464828555",
+                "membershipType": 2,
+                "characterId": "2305843009264506586",
+                "dateLastPlayed": "2018-02-04T10:45:17Z",
+                "minutesPlayedThisSession": "25",
+                "minutesPlayedTotal": "4731",
+                "light": 288,
+                "stats": {
+                    "1935470627": 288,
+                    "2996146975": 2,
+                    "392767087": 3,
+                    "1943323491": 8
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/28fad62e9ed456e8ac25cefd0f5e0fc2.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/dce29b2e09a76727a484b745f4bac3cf.jpg",
+                "emblemHash": 3010885351,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 55,
+                    "blue": 57,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 196000,
+                    "level": 25,
+                    "levelCap": 25,
+                    "stepIndex": 25,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 10000
+                },
+                "baseCharacterLevel": 25,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/Character/2305843009264506586/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018464828555",
+                "membershipType": 2,
+                "characterId": "2305843009277409874",
+                "dateLastPlayed": "2018-03-29T15:48:19Z",
+                "minutesPlayedThisSession": "16",
+                "minutesPlayedTotal": "4855",
+                "light": 288,
+                "stats": {
+                    "1935470627": 288,
+                    "2996146975": 1,
+                    "392767087": 7,
+                    "1943323491": 5
+                },
+                "raceHash": 3887404748,
+                "genderHash": 3111576190,
+                "classHash": 3655393761,
+                "raceType": 0,
+                "classType": 0,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/28fad62e9ed456e8ac25cefd0f5e0fc2.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/dce29b2e09a76727a484b745f4bac3cf.jpg",
+                "emblemHash": 3010885351,
+                "emblemColor": {
+                    "red": 1,
+                    "green": 55,
+                    "blue": 57,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 196000,
+                    "level": 25,
+                    "levelCap": 25,
+                    "stepIndex": 25,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 10000
+                },
+                "baseCharacterLevel": 25,
+                "percentToNextLevel": 0.0
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/2/Profile/4611686018464828555/Character/2305843009277409874/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "profile": {
+            "data": {
+                "userInfo": {
+                    "membershipType": 4,
+                    "membershipId": "4611686018468394612",
+                    "displayName": "TheTimebike"
+                },
+                "dateLastPlayed": "2019-03-19T21:03:19Z",
+                "versionsOwned": 31,
+                "characterIds": [
+                    "2305843009343475210",
+                    "2305843009345105736",
+                    "2305843009351674058"
+                ]
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/?components=Profiles"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018468394612",
+                "membershipType": 4,
+                "characterId": "2305843009343475210",
+                "dateLastPlayed": "2019-03-18T22:44:44Z",
+                "minutesPlayedThisSession": "169",
+                "minutesPlayedTotal": "29958",
+                "light": 545,
+                "stats": {
+                    "1935470627": 545,
+                    "2996146975": 3,
+                    "392767087": 4,
+                    "1943323491": 6
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 671679327,
+                "raceType": 2,
+                "classType": 1,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/93dc869be8ac8bf38e18bdf4ead4b090.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/72d6d3e3cc5c486cc69eb7b87d1ddc7f.jpg",
+                "emblemHash": 1625974211,
+                "emblemColor": {
+                    "red": 54,
+                    "green": 0,
+                    "blue": 0,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 482000,
+                    "level": 50,
+                    "levelCap": 50,
+                    "stepIndex": 50,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 0
+                },
+                "baseCharacterLevel": 50,
+                "percentToNextLevel": 0.0,
+                "titleRecordHash": 2182090828
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/Character/2305843009343475210/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018468394612",
+                "membershipType": 4,
+                "characterId": "2305843009345105736",
+                "dateLastPlayed": "2019-03-19T21:03:19Z",
+                "minutesPlayedThisSession": "41",
+                "minutesPlayedTotal": "19293",
+                "light": 677,
+                "stats": {
+                    "1935470627": 677,
+                    "2996146975": 6,
+                    "392767087": 2,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 2204441813,
+                "classHash": 2271682572,
+                "raceType": 2,
+                "classType": 2,
+                "genderType": 1,
+                "emblemPath": "/common/destiny2_content/icons/fc2a2d570b2a6be1fff0de19e22504bd.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/cc46632e2fe7f7ec633b849b70389b12.jpg",
+                "emblemHash": 46275857,
+                "emblemColor": {
+                    "red": 16,
+                    "green": 5,
+                    "blue": 42,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 482000,
+                    "level": 50,
+                    "levelCap": 50,
+                    "stepIndex": 50,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 0
+                },
+                "baseCharacterLevel": 50,
+                "percentToNextLevel": 0.0,
+                "titleRecordHash": 2182090828
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/Character/2305843009345105736/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}{
+    "Response": {
+        "character": {
+            "data": {
+                "membershipId": "4611686018468394612",
+                "membershipType": 4,
+                "characterId": "2305843009351674058",
+                "dateLastPlayed": "2019-03-16T21:17:53Z",
+                "minutesPlayedThisSession": "58",
+                "minutesPlayedTotal": "14690",
+                "light": 636,
+                "stats": {
+                    "1935470627": 636,
+                    "2996146975": 2,
+                    "392767087": 6,
+                    "1943323491": 5
+                },
+                "raceHash": 898834093,
+                "genderHash": 3111576190,
+                "classHash": 3655393761,
+                "raceType": 2,
+                "classType": 0,
+                "genderType": 0,
+                "emblemPath": "/common/destiny2_content/icons/dcfe74b7a343dd28bd45eee4ea59a1f7.jpg",
+                "emblemBackgroundPath": "/common/destiny2_content/icons/486031c3ec94ab0906308589eb2a6d73.jpg",
+                "emblemHash": 3860733295,
+                "emblemColor": {
+                    "red": 24,
+                    "green": 3,
+                    "blue": 2,
+                    "alpha": 255
+                },
+                "levelProgression": {
+                    "progressionHash": 1716568313,
+                    "dailyProgress": 0,
+                    "dailyLimit": 0,
+                    "weeklyProgress": 0,
+                    "weeklyLimit": 0,
+                    "currentProgress": 482000,
+                    "level": 50,
+                    "levelCap": 50,
+                    "stepIndex": 50,
+                    "progressToNextLevel": 0,
+                    "nextLevelAt": 0
+                },
+                "baseCharacterLevel": 50,
+                "percentToNextLevel": 0.0,
+                "titleRecordHash": 2182090828
+            },
+            "privacy": 1
+        },
+        "request": "https://www.bungie.net/Platform/Destiny2/4/Profile/4611686018468394612/Character/2305843009351674058/?components=Characters"
+    },
+    "ErrorCode": 1,
+    "ThrottleSeconds": 0,
+    "ErrorStatus": "Success",
+    "Message": "Ok",
+    "MessageData": {}
+}

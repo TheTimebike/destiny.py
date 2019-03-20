@@ -6,6 +6,7 @@ from types import SimpleNamespace as Namespace
 
 from .http import GatewaySession
 from .errors import *
+from .character import Character
 
 class Client:    
     def __init__(self, loop=None):
@@ -97,7 +98,9 @@ class Client:
 
         self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/?components={3}".format(membershipType, membershipID, characterID, componentList))
         if self._profileData.get("Response", None) != None:
-            return self._convert(self._profileData["Response"])
+            #return self._convert(self._profileData["Response"]["character"]["data"])
+            return Character(self._profileData)
+
         elif self._profileData.get("ErrorStatus", None) != None:
             return self._profileData
         return None
