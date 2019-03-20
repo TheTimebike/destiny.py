@@ -1,7 +1,9 @@
 from .platform import Platform
-from .characterGender import CharacterGender
-from .characterRace import CharacterRace
-from .characterClass import CharacterClass
+from .character_gender import CharacterGender
+from .character_race import CharacterRace
+from .character_class import CharacterClass
+from .emblem import Emblem
+from .character_progress import CharacterProgress
 
 class Character:
     def __init__(self, responseData):
@@ -12,6 +14,9 @@ class Character:
         self.characterGender = CharacterGender(responseData["Response"]["character"]["data"]["genderType"])
         self.characterRace = CharacterRace(responseData["Response"]["character"]["data"]["raceType"])
         self.characterClass = CharacterClass(responseData["Response"]["character"]["data"]["classType"])
+
+        self.emblem = Emblem(responseData)
+        self.characterProgress = CharacterProgress(responseData)
 
         self.dateLastPlayed = responseData["Response"]["character"]["data"]["dateLastPlayed"]
 
