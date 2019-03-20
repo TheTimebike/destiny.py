@@ -6,4 +6,4 @@ class ProfileBundle:
         self.destinyMemberships = []
         for membershipData in responseData["Response"]["destinyMemberships"]:
             self.destinyMemberships.append(Membership(membershipData))
-        self.bungieProfile = BungieProfile(responseData["Response"]["bungieNetUser"])
+        self.bungieProfile = BungieProfile(responseData["Response"]["bungieNetUser"]) if responseData["Response"].get("bungieNetUser", None) != None else None

@@ -6,7 +6,6 @@ from types import SimpleNamespace as Namespace
 
 from .http import GatewaySession
 from .errors import *
-from .character import Character
 from .profile_bundle import ProfileBundle
 from .membership import Membership
 from .bungie_profile import BungieProfile
@@ -43,6 +42,12 @@ class Client:
         self._jsonDump = json.dumps(data)
         return json.loads(self._jsonDump, object_hook=lambda d: Namespace(**d))
 
+    def _generate_component(self, responseData):
+        self._components = Components()
+        for key, value in responseData["Response"].items():
+            setattr(self._components, key, value["data"])
+        return self._components
+
     def set_user_agent(self, appName, appVersion, appID, appWebsite=None, appEmail=None):
         if appWebsite != None or appEmail != None:
             self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(appName, appVersion, appID, appWebsite, appEmail)
@@ -69,8 +74,6 @@ class Client:
         for bungieUserData in self._possibleUsers["Response"]:
             self._userObjectList.append(Membership(bungieUserData))
 
-        if len(self._userObjectList) == 0:
-            return []
         return self._userObjectList
     
     async def get_membership_type(self, bungieMembershipID):
@@ -91,10 +94,7 @@ class Client:
 
         self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/?components={2}".format(membershipType, membershipID, componentList))
         if self._profileData.get("Response", None) != None:
-            self._components = Components()
-            for key, value in self._profileData["Response"].items():
-                setattr(self._components, key, value["data"])
-            return self._components
+            return self._generate_component(self._profileData)
         return None
 
     async def get_character(self, membershipID, characterID, membershipType=-1, components=[]):
@@ -105,9 +105,16 @@ class Client:
 
         self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/?components={3}".format(membershipType, membershipID, characterID, componentList))
         if self._profileData.get("Response", None) != None:
-            self._components = Components()
-            for key, value in self._profileData["Response"].items():
-                setattr(self._components, key, value["data"])
-            return self._components
+            return self._generate_component(self._profileData)
         return None
-        
+
+    async def get_vendors(self, membershipID, characterID, membershipType=-1, components=[]):
+        if self.gatewaySession == None:
+            raise NoGatewayException
+
+        componentList = ",".join(components)
+
+        self._vendorData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/Vendors/?components={3}".format(membershipType, membershipID, characterID, componentList))
+        if self._vendorData.get("Response", None) != None:
+            return self._generate_component(self._vendorData)
+        return None

@@ -1,30 +1,30 @@
 class BungieProfile:
     def __init__(self, responseData):
-        self.uniqueName = responseData["uniqueName"]
-        self.membershipID = responseData["membershipId"]
+        self.uniqueName = responseData.get("uniqueName", None)
+        self.membershipID = responseData.get("membershipId", None)
 
-        self.displayName = responseData["displayName"]
-        self.xboxName = responseData["xboxDisplayName"]
-        self.psnName = responseData["psnDisplayName"]
-        self.blizzardName = responseData["blizzardDisplayName"]
+        self.displayName = responseData.get("displayName", None)
+        self.xboxName = responseData.get("xboxDisplayName", None)
+        self.psnName = responseData.get("psnDisplayName", None)
+        self.blizzardName = responseData.get("blizzardDisplayName", None)
 
-        self.lastAccess = responseData["lastUpdate"]
-        self.firstAccess = responseData["firstAccess"]
+        self.lastAccess = responseData.get("lastUpdate", None)
+        self.firstAccess = responseData.get("firstAccess", None)
 
-        self.isDeleted = responseData["isDeleted"]
-        self.showActivity = responseData["showActivity"]
-        self.localeInheritDefault = responseData["localeInheritDefault"]
-        self.showGroupMessaging = responseData["showGroupMessaging"]
+        self.isDeleted = responseData.get("isDeleted", None)
+        self.showActivity = responseData.get("showActivity", None)
+        self.localeInheritDefault = responseData.get("localeInheritDefault", None)
+        self.showGroupMessaging = responseData.get("showGroupMessaging", None)
 
-        self.locale = responseData["locale"]
-        self.statusText = responseData["statusText"]
-        self.statusDate = responseData["statusDate"]
+        self.locale = responseData.get("locale", None)
+        self.statusText = responseData.get("statusText", None)
+        self.statusDate = responseData.get("statusDate", None)
 
-        self.profilePicture = responseData["profilePicture"]
-        self.profilePictureUrl = responseData["profilePicturePath"]
-        self.profileTheme = responseData["profileThemeName"]
-        self.profileThemeID = responseData["profileTheme"]
-        self.successMessageFlags = responseData["successMessageFlags"]
-        self.profileTitleID = responseData["userTitle"]
-        self.profileTitle = responseData["userTitleDisplay"]
-        self.profileBio = responseData["about"]
+        self.profilePicture = responseData.get("profilePicture", None)
+        self.profilePictureUrl = responseData.get("profilePicturePath", None)
+        self.profileTheme = responseData.get("profileThemeName", None)
+        self.profileThemeID = responseData.get("profileTheme", None)
+        self.successMessageFlags = responseData.get("successMessageFlags", None)
+        self.profileTitleID = responseData.get("userTitle", None)
+        self.profileTitle = responseData.get("userTitleDisplay", None)
+        self.profileBio = responseData.get("about", None)
