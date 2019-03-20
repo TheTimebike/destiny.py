@@ -7,6 +7,7 @@ from types import SimpleNamespace as Namespace
 from .http import GatewaySession
 from .errors import *
 from .character import Character
+from .profile_bundle import ProfileBundle
 
 class Client:    
     def __init__(self, loop=None):
@@ -52,7 +53,7 @@ class Client:
         self._userData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/User/GetMembershipsById/{0}/{1}".format(bungieMembershipID, membershipType))
 
         if self._userData.get("Response", None) != None:
-            return self._convert(self._userData["Response"])
+            return ProfileBundle(self._userData)
         return None
 
     async def search_for_user(self, name, membershipType=-1):
