@@ -24,9 +24,11 @@ class Client:
     def mainfunc(self, coro):
         setattr(self, "mainFunction", coro)
 
-    def run(self, apiToken=None):
+    def auth(self, authClass):
+        setattr(self, "auth", authClass)
 
-        self.apiToken = apiToken
+    def run(self):
+        self.apiToken = self.auth.apiToken
         if self.apiToken == None:
             raise TokenException   
 
@@ -37,10 +39,6 @@ class Client:
 
     def close(self):
         self._session.close()
-
-    def _convert(self, data):
-        self._jsonDump = json.dumps(data)
-        return json.loads(self._jsonDump, object_hook=lambda d: Namespace(**d))
 
     def _generate_component(self, responseData):
         self._components = Components()
@@ -73,17 +71,11 @@ class Client:
         self._userObjectList = []
         for bungieUserData in self._possibleUsers["Response"]:
             self._userObjectList.append(Membership(bungieUserData))
-
         return self._userObjectList
-    
-    async def get_membership_type(self, bungieMembershipID):
-        if self.gatewaySession == None:
-            raise NoGatewayException
     
     async def get_manifest(self):
         if self.gatewaySession == None:
             raise NoGatewayException
-        
         return await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"]
         
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
