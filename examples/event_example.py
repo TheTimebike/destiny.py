@@ -1,7 +1,7 @@
 import destiny
 client = destiny.Client()
 
-@client.event
+@client.auth
 class Authorisation:
     def __init__(self):
         self.apiToken = "Token"
