@@ -24,10 +24,11 @@ class Client:
         
     def event(self, obj):
         setattr(self._event_handler, obj.__name__, obj)
-
-    def run(self):
-        self.auth = self._event_handler.Authorisation()
+    
+    def auth(self, classObject):
+        setattr(self, "auth", classObject())
         
+    def run(self):
         if self.auth.appEmail != None or self.auth.appWebsite != None:
             self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(self.auth.appName, self.auth.appVersion, self.auth.appID, self.auth.appWebsite, self.auth.appEmail)
         else:
