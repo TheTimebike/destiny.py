@@ -1,8 +1,6 @@
 import aiohttp
 import asyncio
 import json
-from collections import namedtuple
-from types import SimpleNamespace as Namespace
 
 from .http import GatewaySession
 from .errors import *
@@ -10,6 +8,7 @@ from .profile_bundle import ProfileBundle
 from .membership import Membership
 from .bungie_profile import BungieProfile
 from .components import Components
+from .event_handler import EventHandler
 
 class Client:    
     def __init__(self, loop=None):
@@ -21,17 +20,14 @@ class Client:
         self._loop = asyncio.get_event_loop() if loop is None else loop
         self._session = aiohttp.ClientSession(loop=self._loop)
         
-    def mainfunc(self, coro):
-        setattr(self, "mainFunction", coro)
-
-    def auth(self, authClass):
-        setattr(self, "auth", authClass())
-        print("!!")
+        self._event_handler = EventHandler(self)
+        
+    def event(self, obj):
+        setattr(self._event_handler, obj.__name__, obj)
 
     def run(self):
-        print("!")
-        if hasattr(self, "auth"):
-            print("!!!")
+        self.auth = self._event_handler.Authorisation()
+        
         if self.auth.appEmail != None or self.auth.appWebsite != None:
             self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(self.auth.appName, self.auth.appVersion, self.auth.appID, self.auth.appWebsite, self.auth.appEmail)
         else:
@@ -40,7 +36,7 @@ class Client:
         self.apiToken = self.auth.apiToken 
         self.gatewaySession = GatewaySession(self._session, self.apiToken, self.userAgent)
 
-        self._loop.run_until_complete(self.mainFunction())
+        self._loop.run_until_complete(self._event_handler.on_run())
         self._loop.close()
 
     def close(self):
