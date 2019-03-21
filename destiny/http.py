@@ -33,4 +33,4 @@ class GatewaySession:
     
     async def postRequest(self, request):
         self._event_handler._trigger_event("_trigger_on_post_request", request)
-        self._requestData = self.session.post(request, headers=self.headers).json()
+        self._requestData = self.session.post(request, headers=self.headers)
