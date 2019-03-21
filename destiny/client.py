@@ -25,15 +25,17 @@ class Client:
         setattr(self, "mainFunction", coro)
 
     def auth(self, authClass):
-        setattr(self, "auth", authClass)
+        setattr(self, "auth", authClass())
         print("!!")
 
     def run(self):
         print("!")
+        if hasattr(self, "auth"):
+            print("!!!")
         if self.auth.appEmail != None or self.auth.appWebsite != None:
             self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(self.auth.appName, self.auth.appVersion, self.auth.appID, self.auth.appWebsite, self.auth.appEmail)
         else:
-            self.userAgent = "{0}/{1}/{2}".format(appName, appVersion, appID)
+            self.userAgent = "{0}/{1}/{2}".format(self.auth.appName, self.auth.appVersion, self.auth.appID)
 
         self.apiToken = self.auth.apiToken 
         self.gatewaySession = GatewaySession(self._session, self.apiToken, self.userAgent)
