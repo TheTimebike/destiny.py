@@ -7,10 +7,6 @@ http.cookies._is_legal_key = lambda _: True
 from .errors import HTTPException
 
 class GatewaySession:
-    BASE_ROUTE = "https://www.bungie.net/Platform/Destiny2/" # API gateway here
-    USER_ROUTE = "https://www.bungie.net/Platform/User/"
-    GROUP_ROUTE = "https://www.bungie.net/Platform/GroupV2/"
-    
     def __init__(self, session, eventHandler=None, apiToken=None, userAgent=None):
         if apiToken == None or eventHandler == None:
             raise # error
