@@ -35,7 +35,7 @@ class Client:
             self.userAgent = "{0}/{1}/{2}".format(self.auth.appName, self.auth.appVersion, self.auth.appID)
 
         self.apiToken = self.auth.apiToken 
-        self.gatewaySession = GatewaySession(self._session, self.apiToken, self.userAgent)
+        self.gatewaySession = GatewaySession(self._session, self._event_handler, self.apiToken, self.userAgent)
 
         self._loop.run_until_complete(self._event_handler._trigger_event("_trigger_on_run"))
 
@@ -72,7 +72,8 @@ class Client:
     async def get_manifest(self):
         if self.gatewaySession == None:
             raise NoGatewayException
-        return await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")["Response"]
+        self._manifestData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")
+        return self._manifestData["Response"]
         
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         if self.gatewaySession == None:

@@ -18,10 +18,12 @@ class GatewaySession:
         
     async def getRequest(self, request):
         try:
-            self._event_handler._trigger_event("_trigger_on_get_request", request)
+            #await self._event_handler._trigger_event("_trigger_on_get_request", request)
+            print("getting Data")
             async with self.session.get(request, headers=self.headers) as _data:
                 self._requestData = await _data.json()
-            self._event_handler._trigger_event("_trigger_on_recieve", self._requestData)
+            print("got data!")
+            #await self._event_handler._trigger_event("_trigger_on_data_recieve", self._requestData)
             #with open("./Logs.json", "a+") as out:
             #    withUrl = self._requestData
             #    withUrl["request"] = request
@@ -32,5 +34,5 @@ class GatewaySession:
             raise HTTPException
     
     async def postRequest(self, request):
-        self._event_handler._trigger_event("_trigger_on_post_request", request)
+        await self._event_handler._trigger_event("_trigger_on_post_request", request)
         self._requestData = self.session.post(request, headers=self.headers)
