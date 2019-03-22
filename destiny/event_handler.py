@@ -18,7 +18,6 @@ class EventHandler:
             
     async def _trigger_on_get_request(self, params):
         if hasattr(self, "on_get_request"):
-            print("triggered")
             await self.on_get_request(params[0])
             
     async def _trigger_on_post_request(self, params):

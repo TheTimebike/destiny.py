@@ -18,11 +18,9 @@ class GatewaySession:
         
     async def getRequest(self, request):
         await self._event_handler._trigger_event("_trigger_on_get_request", request)
-        print("getting Data")
         async with self.session.get(request, headers=self.headers) as _data:
         #print("making request")
             self._requestData = await _data.json()
-        print("got data!")
         await self._event_handler._trigger_event("_trigger_on_data_recieve", self._requestData)
         return self._requestData
 
