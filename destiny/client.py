@@ -48,6 +48,8 @@ class Client:
         self._verify_auth()
         
     def run(self):
+        """A function that runs the bot.
+        """
         if self.auth.appEmail != None or self.auth.appWebsite != None:
             self.userAgent = "{0}/{1}/{2} (+{3};{4})".format(self.auth.appName, self.auth.appVersion, self.auth.appID, self.auth.appWebsite, self.auth.appEmail)
         else:
@@ -74,6 +76,17 @@ class Client:
         return self._components
             
     async def get_user(self, bungieMembershipID, membershipType=-1):
+        """|coro|
+        A function that returns a ProfileBundle object with data for the user specified.
+
+        Parameters
+        ----------
+
+        bungieMembershipID
+            This is the membershipID of the bungie account.
+        membershipType Optional
+            The membershipType of the bungie account. (Platform)
+        """
         if self.gatewaySession == None:
             raise NoGatewayException
 
