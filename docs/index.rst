@@ -1,4 +1,5 @@
-### Welcome to destiny.py's documentation!
+Welcome to destiny.py's documentation!
+======================================
 
 contents:
 ```
