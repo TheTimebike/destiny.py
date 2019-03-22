@@ -20,20 +20,3 @@ Python 3.5+
 pip install https://github.com/TheTimebike/destiny.py.git
 ```
 To check if destiny.py has been installed succesfully, open a Python code terminal and type "import destiny".
-
-## Documentation
-
-### client
-> class destiny.Client(loop=None)
-
-This class is used to define the client that destiny.py will use to make all of the requests. All of the API requests are functions of this class.
-
-#### Parameters
-
-- ```Loop``` - The loop which will be used to hold asynchronous functions. If not specifed, one will be created by the client.
-
-> run()
-
-This function is an attribute of ```client``` that tells destiny.py to run the code it has been given.
-
->
