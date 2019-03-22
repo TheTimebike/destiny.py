@@ -7,4 +7,3 @@ Client
 -------
 
 .. autoclass:: Client
-    :members:
