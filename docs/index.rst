@@ -11,7 +11,7 @@ Welcome to destiny.py's documentation!
    :caption: Contents:
 
    api
-
+   faq
 
 
 Indices and tables
