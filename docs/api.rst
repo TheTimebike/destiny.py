@@ -9,3 +9,4 @@ Client
 ------
 
 .. autoclass:: Client
+   :members:
