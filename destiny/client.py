@@ -27,6 +27,7 @@ class Client:
     
     def auth(self, classObject):
         setattr(self, "auth", classObject())
+        self._verify_auth()
         
     def run(self):
         if self.auth.appEmail != None or self.auth.appWebsite != None:
@@ -42,6 +43,11 @@ class Client:
 
     def close(self):
         self._session.close()
+
+    def _verify_auth(self):
+        self._auth_attribute_list = ["appName", "appVersion", "appID", "appWebsite", "appEmail"]
+        for attr in self._auth_attribute_list:
+            setattr(self.auth, attr, attr if not hasattr(self.auth, attr) else getattr(self.auth, attr))
 
     def _generate_component(self, responseData):
         self._components = Components()
