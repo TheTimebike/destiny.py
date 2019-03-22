@@ -5,10 +5,19 @@ client = destiny.Client()
 class Authorisation:
     def __init__(self):
         self.apiToken = "Token"
+        self.appName = "Name"
+        self.appVersion = "1"
+        self.appID = "1"
+        self.appWebsite = None
+        self.verificationUrl = None
+        self.appEmail = None
 
 @client.event
 async def on_run():
-    await client.get_manifest()
+    myAccount = await client.get_user("4611686018440571747")
+    for profile in myAccount.destinyMemberships:
+        print("{0}: {1}: {2}".format(profile.displayName, profile.membershipObject.type, profile.membershipID))
+    client.close()
     
 @client.event
 async def on_get_request(request):
