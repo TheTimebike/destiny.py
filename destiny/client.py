@@ -19,6 +19,16 @@ class Client:
         loop : Optional[event loop]
             The event loop in which the client will be ran under. If one is not provided,
             the client creates one.
+
+        Attributes
+        ----------
+        userAgent Optional
+            A str that represents the applications' useragent. If one is not provided,
+            it will default to template values.
+        apiToken
+            A str that represents the applications' API token. One is required to run a
+            bot. 
+        
         """
         self.BASE_ROUTE = "https://www.bungie.net/Platform" # API gateway here
 
