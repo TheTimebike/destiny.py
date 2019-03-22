@@ -12,6 +12,14 @@ from .event_handler import EventHandler
 
 class Client:    
     def __init__(self, loop=None):
+        """Represents a client connection that is used to interact with the API.
+
+        Parameters
+        ----------
+        loop : Optional[event loop]
+            The event loop in which the client will be ran under. If one is not provided,
+            the client creates one.
+        """
         self.BASE_ROUTE = "https://www.bungie.net/Platform" # API gateway here
 
         self.userAgent = None
