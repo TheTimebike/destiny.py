@@ -11,25 +11,19 @@ from .components import Components
 from .event_handler import EventHandler
 
 class Client:    
+    """Represents a client connection that is used to interact with the API.
+
+    :param event_loop loop: The event loop in which the client will be ran under. If one is not provided. the client creates one.
+
+    userAgent
+        A str that represents the applications' useragent. If one is not provided,
+        it will default to template values.
+    apiToken
+        A str that represents the applications' API token. One is required to run a
+        bot. 
+    
+    """
     def __init__(self, loop=None):
-        """Represents a client connection that is used to interact with the API.
-
-        Parameters
-        ----------
-        loop : Optional[event loop]
-            The event loop in which the client will be ran under. If one is not provided,
-            the client creates one.
-
-        Attributes
-        ----------
-        userAgent Optional
-            A str that represents the applications' useragent. If one is not provided,
-            it will default to template values.
-        apiToken
-            A str that represents the applications' API token. One is required to run a
-            bot. 
-        
-        """
         self.BASE_ROUTE = "https://www.bungie.net/Platform" # API gateway here
 
         self.userAgent = None
@@ -75,7 +69,7 @@ class Client:
     def _generate_component(self, responseData):
         self._components = Components()
         for key, value in responseData["Response"].items():
-            setattr(self._components, key, value["data"])
+            self._components._add_attr(key, value["data"])
         return self._components
             
     async def get_user(self, bungieMembershipID, membershipType=-1):
