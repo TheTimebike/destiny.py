@@ -38,6 +38,7 @@ class Client:
         self.gatewaySession = GatewaySession(self._session, self._event_handler, self.apiToken, self.userAgent)
 
         self._loop.run_until_complete(self._event_handler._trigger_event("_trigger_on_run"))
+        self._loop.close()
 
     def close(self):
         self._session.close()
