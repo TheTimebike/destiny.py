@@ -1,2 +1,5 @@
 __pycache__/
 /old_files/
+/docs/_build
+/docs/_static
+/docs/_template
