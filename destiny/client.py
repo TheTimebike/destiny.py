@@ -62,6 +62,9 @@ class Client:
         self._loop.close()
 
     def close(self):
+        """
+        Closes the connection to the Destiny2 API.
+        """
         self._session.close()
 
     def _verify_auth(self):
@@ -76,16 +79,15 @@ class Client:
         return self._components
             
     async def get_user(self, bungieMembershipID, membershipType=-1):
-        """|coro|
-        A function that returns a ProfileBundle object with data for the user specified.
+        """*This function is a coroutine.*
 
-        Parameters
-        ----------
+        A function that returns a ProfileBundle object containing data for the user specified.
 
-        bungieMembershipID
-            This is the membershipID of the bungie account.
-        membershipType Optional
-            The membershipType of the bungie account. (Platform)
+        :param str bungieMembershipID: The ID of the bungie account.
+        :param str membershipType: The membershipType of the bungie account. 
+
+        :return: A ProfileBungle object containing the user data.
+        :rtype: ProfileBundle
         """
         if self.gatewaySession == None:
             raise NoGatewayException
@@ -97,6 +99,16 @@ class Client:
         return None
 
     async def search_for_user(self, name, membershipType=-1):
+        """*This function is a coroutine.*
+
+        A coroutine that returns a list of Membership objects containing data for the users that match the search.
+
+        :param str name: The string that the API will return username matches for.
+        :param str membershipType: The membershipType of the bungie account.
+
+        :return: A list of Membership objects containing the user data.
+        :rtype: List
+        """
         if self.gatewaySession == None:
             raise NoGatewayException
 
@@ -108,12 +120,30 @@ class Client:
         return self._userObjectList
     
     async def get_manifest(self):
+        """*This function is a coroutine.*
+
+        A coroutine that returns a dictionary of the Destiny2 manifest.
+
+        :return: The Destiny2 manifest.
+        :rtype: dict
+        """
         if self.gatewaySession == None:
             raise NoGatewayException
         self._manifestData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")
         return self._manifestData["Response"]
         
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
+        """*This function is a coroutine.*
+
+        A coroutine that returns a Components object with the specified data for the profile.
+
+        :param str membershipID: The ID of the bungie account.
+        :param str membershipType: The membershipType of the bungie account.
+        :param list components: A list of the data that will be requested from the API.
+
+        :return: A Components object containing the profile data.
+        :rtype: Components
+        """
         if self.gatewaySession == None:
             raise NoGatewayException
 
@@ -125,6 +155,18 @@ class Client:
         return None
 
     async def get_character(self, membershipID, characterID, membershipType=-1, components=[]):
+        """*This function is a coroutine.*
+
+        A coroutine that returns a Components object with the specified data for the character.
+
+        :param str membershipID: The ID of the bungie account.
+        :param str characterID: The ID of the character that is connected to the bungie account.
+        :param str membershipType: The membershipType of the bungie account.
+        :param list components: A list of the data that will be requested from the API.
+
+        :return: A Components object containing the character data.
+        :rtype: Components
+        """
         if self.gatewaySession == None:
             raise NoGatewayException
 
@@ -136,6 +178,18 @@ class Client:
         return None
 
     async def get_vendors(self, membershipID, characterID, membershipType=-1, components=[]):
+        """*This function is a coroutine.*
+
+        A coroutine that returns a Components object with the specified vendor data for the character.
+
+        :param str membershipID: The ID of the bungie account.
+        :param str characterID: The ID of the character that is connected to the bungie account.
+        :param str membershipType: The membershipType of the bungie account.
+        :param list components: A list of the data that will be requested from the API.
+
+        :return: A Components object containing the vendor data.
+        :rtype: Components
+        """
         if self.gatewaySession == None:
             raise NoGatewayException
 

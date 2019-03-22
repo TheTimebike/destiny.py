@@ -1,8 +1,10 @@
+.. currentmodule:: destiny
+
 API Reference
 ===============
 
 Client
 -------
 
-.. autoclass:: client.Client
-    :members:
+.. autoclass:: Client
+   :members:
