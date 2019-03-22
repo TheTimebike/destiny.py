@@ -1,8 +1,9 @@
 Welcome to destiny.py's documentation!
 ======================================
 
-contents:
-	..toctree::
+Contents:
+
+..toctree::
 	:maxdepth: 2
 	
 	installation
