@@ -7,6 +7,9 @@ Client
 .. autoclass:: destiny.Client
    :members:
 
+.. autoclass:: destiny.GatewaySession
+   :members:
+
 Authorisation
 ---------------
 .. class:: Authorisation
@@ -68,6 +71,7 @@ To register an event, decorate an asynchronous function with ``@client.event``.
 
 Object Reference
 ----------------
+
 .. autoclass:: destiny.Membership
    :members:
 
@@ -75,4 +79,10 @@ Object Reference
    :members:
 
 .. autoclass:: destiny.Platform
+   :members:
+
+.. autoclass:: destiny.BungieProfile
+   :members:
+
+.. autoclass:: destiny.ProfileBundle
    :members:

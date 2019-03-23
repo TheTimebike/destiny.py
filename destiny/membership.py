@@ -3,7 +3,7 @@ from .platform import Platform
 class Membership:
     """Represents a users' Membership data.
     
-    :param dict responseData: Returns The raw data given back by the API request.
+    :param dict responseData: The raw data given back by the API request.
 
     displayName
         Returns the display name of the user.
