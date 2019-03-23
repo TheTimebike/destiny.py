@@ -9,14 +9,3 @@ async def on_run():
 	manifest = await client.get_manifest()
 client.run()
 ```
-
-## Dependencies
-Python 3.5+
-
-```aiohttp``` library
-
-## Installation
-```
-pip install https://github.com/TheTimebike/destiny.py.git
-```
-To check if destiny.py has been installed succesfully, open a Python code terminal and type "import destiny".
