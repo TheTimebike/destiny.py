@@ -10,6 +10,7 @@ Welcome to destiny.py's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   install
    api
    faq
 
