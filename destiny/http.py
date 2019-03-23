@@ -35,15 +35,15 @@ class GatewaySession:
         self.headers = {"X-API-Key": apiToken}
         self._event_handler = eventHandler
         
-    async def getRequest(self, request):
+    async def get_request(self, request):
         """*This function is a coroutine.*
 
         A function that requests specific data from the API and returns it in JSON format.
 
         :param str request: The URL for the request to be made to.
 
-        :return The data given by the get request
-        :rtype dict
+        :return: The data given by the get request.
+        :rtype: dict
 
         """
         await self._event_handler._trigger_event("_trigger_on_get_request", request)
@@ -53,7 +53,7 @@ class GatewaySession:
         await self._event_handler._trigger_event("_trigger_on_data_recieve", self._requestData)
         return self._requestData
 
-    async def postRequest(self, request):
+    async def post_request(self, request):
         """*This function is a coroutine.*
 
         A function that sends instructions to the API.

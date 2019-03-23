@@ -86,7 +86,7 @@ class Client:
         if self.gatewaySession == None:
             raise NoGatewayException
 
-        self._userData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/User/GetMembershipsById/{0}/{1}".format(bungieMembershipID, membershipType))
+        self._userData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/User/GetMembershipsById/{0}/{1}".format(bungieMembershipID, membershipType))
 
         if self._userData.get("Response", None) != None:
             return ProfileBundle(self._userData)
@@ -106,7 +106,7 @@ class Client:
         if self.gatewaySession == None:
             raise NoGatewayException
 
-        self._possibleUsers = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{0}/{1}/".format(membershipType, name))
+        self._possibleUsers = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/SearchDestinyPlayer/{0}/{1}/".format(membershipType, name))
         
         self._userObjectList = []
         for bungieUserData in self._possibleUsers["Response"]:
@@ -123,7 +123,7 @@ class Client:
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-        self._manifestData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/Manifest/")
+        self._manifestData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Manifest/")
         return self._manifestData["Response"]
         
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
@@ -143,7 +143,7 @@ class Client:
 
         componentList = ",".join(components)
 
-        self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/?components={2}".format(membershipType, membershipID, componentList))
+        self._profileData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/?components={2}".format(membershipType, membershipID, componentList))
         if self._profileData.get("Response", None) != None:
             return self._generate_component(self._profileData)
         return None
@@ -166,7 +166,7 @@ class Client:
 
         componentList = ",".join(components)
 
-        self._profileData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/?components={3}".format(membershipType, membershipID, characterID, componentList))
+        self._profileData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/?components={3}".format(membershipType, membershipID, characterID, componentList))
         if self._profileData.get("Response", None) != None:
             return self._generate_component(self._profileData)
         return None
@@ -189,7 +189,7 @@ class Client:
 
         componentList = ",".join(components)
 
-        self._vendorData = await self.gatewaySession.getRequest(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/Vendors/?components={3}".format(membershipType, membershipID, characterID, componentList))
+        self._vendorData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/Vendors/?components={3}".format(membershipType, membershipID, characterID, componentList))
         if self._vendorData.get("Response", None) != None:
             return self._generate_component(self._vendorData)
         return None
