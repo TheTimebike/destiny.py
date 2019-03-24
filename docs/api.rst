@@ -89,3 +89,6 @@ Object Reference
 
 .. autoclass:: destiny.GroupType
    :members:
+
+.. autoclass:: destiny.Group
+   :members:
