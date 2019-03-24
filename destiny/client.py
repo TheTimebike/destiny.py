@@ -10,11 +10,12 @@ from .bungie_profile import BungieProfile
 from .components import Components
 from .event_handler import EventHandler
 from .group import Group
+from .groups.group_member import GroupMember
 
 class Client:    
     """Represents a client connection that is used to interact with the API.
 
-    :param event_loop loop: The event loop in which the client will be ran under. If one is not provided. the client creates one.
+    :param event_loop loop: The event loop in which the client will be ran under. If one is not provided, the client creates one.
 
     userAgent
         A str that represents the applications' useragent. If one is not provided,
@@ -120,7 +121,7 @@ class Client:
         A coroutine that returns a dictionary of the Destiny2 manifest.
 
         :return: The Destiny2 manifest.
-        :rtype: dict
+        :rtype: Dict
         """
         if self.gatewaySession == None:
             raise NoGatewayException
@@ -232,3 +233,23 @@ class Client:
         if self._groupData.get("Response", None) != None:
             return Group(self._groupData)
         return None
+
+    async def get_group_members(self, groupID):
+        """*This function is a coroutine*
+
+        A coroutine that returns a list of GroupMember objects from a groupID. Returns an empty list if not found.
+
+        :param str groupID: The ID of the group to find.
+
+        :return: A list containing GroupMember objects.
+        :rtype: List
+        """
+
+        if self.gatewaySession == None:
+            raise NoGatewayException
+        
+        self._groupListData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/Members/".format(groupID))
+        self._memberObjectList = []
+        for _groupMemberData in self._groupListData["Response"]["results"]:
+            self._memberObjectList.append(GroupMember(_groupMemberData))
+        return self._memberObjectList

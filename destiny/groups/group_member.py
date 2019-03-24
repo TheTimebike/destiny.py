@@ -42,14 +42,16 @@ class GroupMember:
         self.isOnline = responseData.get("isOnline", None)
         self.lastOnlineStatusChange = responseData.get("lastOnlineStatusChange", None)
         
-        self.destinyIconUrl = responseData["destinyUserInfo"].get("iconUrl", None)
-        self.destinyMembershipTypeID = responseData["destinyUserInfo"].get("membershipType", None)
-        self.destinyMembership = Platform(self.destinyMembershipTypeID)
-        self.destinyMembershipID = responseData["destinyUserInfo"].get("membershipId", None)
-        self.destinyDisplayName = responseData["destinyUserInfo"].get("displayName", None)
+        if responseData.get("destinyUserInfo", None) != None:
+            self.destinyIconUrl = responseData["destinyUserInfo"].get("iconUrl", None)
+            self.destinyMembershipTypeID = responseData["destinyUserInfo"].get("membershipType", None)
+            self.destinyMembership = Platform(self.destinyMembershipTypeID)
+            self.destinyMembershipID = responseData["destinyUserInfo"].get("membershipId", None)
+            self.destinyDisplayName = responseData["destinyUserInfo"].get("displayName", None)
 
-        self.bungieIconUrl = responseData["bungieNetUserInfo"].get("iconUrl", None)
-        self.bungieSupplimentalDisplayName = responseData["bungieNetUserInfo"].get("supplimentalDisplayName", None)
-        self.bungieMembershipTypeID = responseData["bungieNetUserInfo"].get("membershipType", None)
-        self.bungieMembershipID = responseData["bungieNetUserInfo"].get("membershipId", None)
-        self.bungieDisplayName = responseData["bungieNetUserInfo"].get("displayName", None)
+        if responseData.get("bungieNetUserInfo", None) != None:
+            self.bungieIconUrl = responseData["bungieNetUserInfo"].get("iconUrl", None)
+            self.bungieSupplimentalDisplayName = responseData["bungieNetUserInfo"].get("supplimentalDisplayName", None)
+            self.bungieMembershipTypeID = responseData["bungieNetUserInfo"].get("membershipType", None)
+            self.bungieMembershipID = responseData["bungieNetUserInfo"].get("membershipId", None)
+            self.bungieDisplayName = responseData["bungieNetUserInfo"].get("displayName", None)
