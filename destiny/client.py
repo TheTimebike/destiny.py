@@ -76,7 +76,7 @@ class Client:
     async def get_user(self, bungieMembershipID, membershipType=-1):
         """*This function is a coroutine.*
 
-        A function that returns a ProfileBundle object containing data for the user specified.
+        A function that returns a ProfileBundle object with user data. Returns None if not found.
 
         :param str bungieMembershipID: The ID of the bungie account.
         :param str membershipType: The membershipType of the bungie account. 
@@ -96,7 +96,7 @@ class Client:
     async def search_for_user(self, name, membershipType=-1):
         """*This function is a coroutine.*
 
-        A coroutine that returns a list of Membership objects containing data for the users that match the search.
+        A coroutine that returns a list of Membership objects containing data for the users that match the search. Returns an empty list if none are found.
 
         :param str name: The string that the API will return username matches for.
         :param str membershipType: The membershipType of the bungie account.
@@ -130,7 +130,7 @@ class Client:
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Components object with the specified data for the profile.
+        A coroutine that returns a Components object with profile data. Returns None if not found.
 
         :param str membershipID: The ID of the bungie account.
         :param str membershipType: The membershipType of the bungie account.
@@ -152,7 +152,7 @@ class Client:
     async def get_character(self, membershipID, characterID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Components object with the specified data for the character.
+        A coroutine that returns a Components object with character-specific data. Returns None if not found.
 
         :param str membershipID: The ID of the bungie account.
         :param str characterID: The ID of the character that is connected to the bungie account.
@@ -175,7 +175,7 @@ class Client:
     async def get_vendors(self, membershipID, characterID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Components object with the specified vendor data for the character.
+        A coroutine that returns a Components object with character-specific vendor data. Returns None if not found
 
         :param str membershipID: The ID of the bungie account.
         :param str characterID: The ID of the character that is connected to the bungie account.
@@ -198,6 +198,16 @@ class Client:
     #async def get_group(self, name, groupType=-1):
 
     async def search_for_group(self, name, groupType):
+        """*This function is a coroutine.*
+
+        A coroutine that returns a Group object. Returns None if not found.
+
+        :param str name: The string of the group name to search for
+        :param str groupType: The type of group to search for. 0 for group, 1 for clan.
+
+        :return: A Group object containing the group data.
+        :rtype: Group
+        """        
         if self.gatewaySession == None:
             raise NoGatewayException
 
