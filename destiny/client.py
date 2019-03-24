@@ -195,12 +195,29 @@ class Client:
             return self._generate_component(self._vendorData)
         return None
     
-    #async def get_group(self, name, groupType=-1):
+    async def get_group(self, groupID):
+        """*This function is a coroutine*
 
+        A coroutine that returns a Group object from a groupID. Returns None if not foumd.
+
+        :param str groupID: The ID of the group to find.
+
+        :return: A Group object containing the group data.
+        :rtype: Group
+        """
+
+        if self.gatewaySession == None:
+            raise NoGatewayException
+        
+        self._groupData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/".format(groupID))
+        if self._groupData.get("Response", None) != None:
+            return Group(self._groupData)
+        return None
+    
     async def search_for_group(self, name, groupType):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Group object. Returns None if not found.
+        A coroutine that returns a Group object from a name and group type. Returns None if not found.
 
         :param str name: The string of the group name to search for
         :param str groupType: The type of group to search for. 0 for group, 1 for clan.
