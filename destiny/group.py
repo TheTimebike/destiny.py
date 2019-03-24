@@ -1,5 +1,6 @@
 from .groups.group_features import GroupFeatures
 from .progress import Progress
+from .groups.group_member import GroupMember
 
 class Group:
     """Represents the data of a group.
@@ -18,6 +19,10 @@ class Group:
         The motto of the group.
     groupTheme
         The name of the group's theme.
+    groupFeatures
+        A GroupFeatures object containing the features of the group.
+    clanProgress
+        A Progress object containing the progress of the group.
     creationDate
         The date of when the group was created.
     updateDate
@@ -60,6 +65,7 @@ class Group:
         self.groupTags = responseData["Response"]["detail"].get("tags", None)
         self.groupMotto = responseData["Response"]["detail"].get("motto", None)
         self.groupTheme = responseData["Response"]["detail"].get("theme", None)
+        self.groupFounder = GroupMember(responseData["Response"]["founder"])
 
         self.creationDate = responseData["Response"]["detail"].get("creationDate", None)
         self.updateDate = responseData["Response"]["detail"].get("updateDate", None)
@@ -87,3 +93,6 @@ class Group:
         self.chatAllowed = responseData["Response"]["detail"].get("allowChat", None)
 
         self.groupFeatures = GroupFeatures(responseData["Response"]["detail"]["features"])
+        self.clanProgress = {}
+        for key, value in responseData["Response"]["detail"]["clanInfo"]["d2ClanProgressions"].items():
+            self.clanProgress[key] = Progress(value)

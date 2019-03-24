@@ -98,3 +98,6 @@ Object Reference
 
 .. autoclass:: destiny.GroupFeatures()
    :members:
+
+.. autoclass:: destiny.GroupMember()
+   :members:

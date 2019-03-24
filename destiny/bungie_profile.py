@@ -28,7 +28,7 @@ class BungieProfile:
     showGroupMessaging
         Unknown
     locale
-        Unknown
+        The locale of the bungie profile.
     statusText
         The text representing the status of the account.
     statusDate

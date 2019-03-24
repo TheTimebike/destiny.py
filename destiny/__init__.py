@@ -8,4 +8,5 @@ from .profile_bundle import ProfileBundle
 from .progress import Progress
 from .groups.group_type import GroupType
 from .groups.group_features import GroupFeatures
+from .groups.group_member import GroupMember
 from .group import Group
