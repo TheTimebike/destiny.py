@@ -72,23 +72,23 @@ To register an event, decorate an asynchronous function with ``@client.event``.
 Object Reference
 ----------------
 
-.. autoclass:: destiny.Membership
+.. autoclass:: destiny.Membership()
    :members:
 
-.. autoclass:: destiny.Components
+.. autoclass:: destiny.Components()
    :members:
 
-.. autoclass:: destiny.Platform
+.. autoclass:: destiny.Platform()
    :members:
 
-.. autoclass:: destiny.BungieProfile
+.. autoclass:: destiny.BungieProfile()
    :members:
 
-.. autoclass:: destiny.ProfileBundle
+.. autoclass:: destiny.ProfileBundle()
    :members:
 
-.. autoclass:: destiny.GroupType
+.. autoclass:: destiny.GroupType()
    :members:
 
-.. autoclass:: destiny.Group
+.. autoclass:: destiny.Group()
    :members:
