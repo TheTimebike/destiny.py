@@ -86,3 +86,6 @@ Object Reference
 
 .. autoclass:: destiny.ProfileBundle
    :members:
+
+.. autoclass:: destiny.GroupType
+   :members:

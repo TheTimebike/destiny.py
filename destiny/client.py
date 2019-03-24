@@ -193,3 +193,12 @@ class Client:
         if self._vendorData.get("Response", None) != None:
             return self._generate_component(self._vendorData)
         return None
+    
+    #async def get_group(self, name, groupType=-1):
+
+    async def search_for_group(self, name, groupType):
+        if self.gatewaySession == None:
+            raise NoGatewayException
+
+        self._groupData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/Name/{0}/{1}/".format(name, groupType))
+        return self._groupData.get("Response", None)

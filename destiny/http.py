@@ -1,6 +1,7 @@
 import aiohttp
 import asyncio
 import json
+import urllib.parse
 
 import http.cookies
 http.cookies._is_legal_key = lambda _: True
@@ -47,8 +48,7 @@ class GatewaySession:
 
         """
         await self._event_handler._trigger_event("_trigger_on_get_request", request)
-        async with self.session.get(request, headers=self.headers) as _data:
-        #print("making request")
+        async with self.session.get(urllib.parse.quote(request, safe=':/?&=,.'), headers=self.headers) as _data:
             self._requestData = await _data.json()
         await self._event_handler._trigger_event("_trigger_on_data_recieve", self._requestData)
         return self._requestData
