@@ -2,7 +2,7 @@ class GroupType:
     """Represents groupType data given back by the API in a more user-friendly format.
     Can be created any time by passing a numerical groupType value, 0 or 1.
 
-    :param int groupTyPe: A numerical membershipType value.
+    :param int groupType: A numerical membershipType value.
 
     type
         A string of the group type.

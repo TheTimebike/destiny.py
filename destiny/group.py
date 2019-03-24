@@ -1,3 +1,5 @@
+from .groups.group_features import GroupFeatures
+
 class Group:
     """Represents the data of a group.
 
@@ -82,3 +84,5 @@ class Group:
 
         self.chatSecurity = responseData["Response"]["detail"].get("chatSecurity", None)
         self.chatAllowed = responseData["Response"]["detail"].get("allowChat", None)
+
+        self.groupFeatures = GroupFeatures(responseData["Response"]["detail"]["features"])

@@ -78,7 +78,7 @@ Object Reference
 .. autoclass:: destiny.Components()
    :members:
 
-.. autoclass:: destiny.Platform()
+.. autoclass:: destiny.Platform(membershipType)
    :members:
 
 .. autoclass:: destiny.BungieProfile()
@@ -87,8 +87,11 @@ Object Reference
 .. autoclass:: destiny.ProfileBundle()
    :members:
 
-.. autoclass:: destiny.GroupType()
+.. autoclass:: destiny.Group()
    :members:
 
-.. autoclass:: destiny.Group()
+.. autoclass:: destiny.GroupType(groupType)
+   :members:
+
+.. autoclass:: destiny.GroupFeatures()
    :members:
