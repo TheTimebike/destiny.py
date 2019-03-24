@@ -3,7 +3,7 @@ class GroupFeatures:
 
     maxMembers
         The maximum amount of members the group can hold.
-    maxMembershipOfGroupTypes
+    maxMembershipsOfGroupType
         Unknown.
     capabilities
         Unknown.
@@ -22,13 +22,13 @@ class GroupFeatures:
 
     """
     def __init__(self, features):
-        self.maxMembers = features["maximumMembers"]
-        self.maxMembershipOfGroupTypes = features["maximumMembershipOfGroupTypes"]
-        self.capabilities = features["capabilities"]
-        self.membershipTypes = features["membershipTypes"]
+        self.maxMembers = features.get("maximumMembers", None)
+        self.maxMembershipsOfGroupTypes = features.get("maximumMembershipOfGroupType", None)
+        self.capabilities = features.get("capabilities", None)
+        self.membershipTypes = features.get("membershipTypes", None)
 
-        self.invitePermissionOverride = features["invitePermissionOverride"]
-        self.updateCulturePermissionOverride = features["updateCulturePermissionOverride"]
-        self.hostGuideGamePermissionOverride = features["hostGuideGamePermissionOverride"]
-        self.updateBannerPermissionOverride = features["updateBannerPermissionOverride"]
-        self.joinLevel = features["membershipTypes"]
+        self.invitePermissionOverride = features.get("invitePermissionOverride", None)
+        self.updateCulturePermissionOverride = features.get("updateCulturePermissionOverride", None)
+        self.hostGuideGamePermissionOverride = features.get("hostGuideGamePermissionOverride", None)
+        self.updateBannerPermissionOverride = features.get("updateBannerPermissionOverride", None)
+        self.joinLevel = features.get("membershipTypes", None)

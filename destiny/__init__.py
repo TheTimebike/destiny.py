@@ -5,6 +5,7 @@ from .platform import Platform
 from .http import GatewaySession
 from .bungie_profile import BungieProfile
 from .profile_bundle import ProfileBundle
+from .progress import Progress
 from .groups.group_type import GroupType
 from .groups.group_features import GroupFeatures
 from .group import Group

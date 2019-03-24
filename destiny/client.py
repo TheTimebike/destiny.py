@@ -9,6 +9,7 @@ from .membership import Membership
 from .bungie_profile import BungieProfile
 from .components import Components
 from .event_handler import EventHandler
+from .group import Group
 
 class Client:    
     """Represents a client connection that is used to interact with the API.
@@ -201,4 +202,6 @@ class Client:
             raise NoGatewayException
 
         self._groupData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/Name/{0}/{1}/".format(name, groupType))
-        return self._groupData.get("Response", None)
+        if self._groupData.get("Response", None) != None:
+            return Group(self._groupData)
+        return None

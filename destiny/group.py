@@ -1,4 +1,5 @@
 from .groups.group_features import GroupFeatures
+from .progress import Progress
 
 class Group:
     """Represents the data of a group.
@@ -57,7 +58,7 @@ class Group:
         self.groupTypeID = responseData["Response"]["detail"].get("groupType", None)
         self.groupBio = responseData["Response"]["detail"].get("about", None)
         self.groupTags = responseData["Response"]["detail"].get("tags", None)
-        self.groupMotto = responseData["Tesponse"]["detail"].get("motto", None)
+        self.groupMotto = responseData["Response"]["detail"].get("motto", None)
         self.groupTheme = responseData["Response"]["detail"].get("theme", None)
 
         self.creationDate = responseData["Response"]["detail"].get("creationDate", None)

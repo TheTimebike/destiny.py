@@ -81,6 +81,9 @@ Object Reference
 .. autoclass:: destiny.Platform(membershipType)
    :members:
 
+.. autoclass:: destiny.Progress()
+   :members:
+
 .. autoclass:: destiny.BungieProfile()
    :members:
 
