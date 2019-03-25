@@ -142,3 +142,25 @@ class Group:
             self._groupListData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/AdminsAndFounder/{1}/".format(self.groupID, self._pageIndex))
             await asyncio.sleep(0.5)
         return self._memberObjectList
+    
+    async def get_banned_members(self):
+        """*This function is a coroutine*
+
+        A coroutine that returns a list of GroupMember objects from a groupID for the banned members of the group. Returns an empty list if not found.
+
+        :return: A list containing GroupMember objects.
+        :rtype: List
+        """
+
+        if self.gatewaySession == None:
+            raise NoGatewayException
+        self._pageIndex = 1
+        self._groupListData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/Banned/{1}/".format(self.groupID, self._pageIndex))
+        self._memberObjectList = []
+        while self._groupListData["Response"]["hasMore"]:
+            for _groupMemberData in self._groupListData["Response"]["results"]:
+                self._memberObjectList.append(GroupMember(_groupMemberData))
+            self._pageIndex += 1
+            self._groupListData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/Banned/{1}/".format(self.groupID, self._pageIndex))
+            await asyncio.sleep(0.5)
+        return self._memberObjectList
