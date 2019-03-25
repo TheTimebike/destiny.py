@@ -15,6 +15,10 @@ class EventHandler:
     async def _trigger_on_data_recieve(self, params):
         if hasattr(self, "on_data_recieve"):
             await self.on_data_recieve(params[0])
+        
+    async def _trigger_on_raw_data_recieve(self, params):
+        if hasattr(self, "on_raw_data_recieve"):
+            await self.on_raw_data_recieve(params[0])
             
     async def _trigger_on_get_request(self, params):
         if hasattr(self, "on_get_request"):

@@ -93,6 +93,7 @@ class Group:
         self.chatAllowed = responseData["Response"]["detail"].get("allowChat", None)
 
         self.groupFeatures = GroupFeatures(responseData["Response"]["detail"]["features"])
-        self.clanProgress = {}
-        for key, value in responseData["Response"]["detail"]["clanInfo"]["d2ClanProgressions"].items():
-            self.clanProgress[key] = Progress(value)
+        if responseData["Response"]["detail"].get("clanInfo", None) != None:
+            self.clanProgress = {}
+            for key, value in responseData["Response"]["detail"]["clanInfo"]["d2ClanProgressions"].items():
+                self.clanProgress[key] = Progress(value)

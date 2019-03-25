@@ -247,9 +247,13 @@ class Client:
 
         if self.gatewaySession == None:
             raise NoGatewayException
-        
-        self._groupListData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/Members/".format(groupID))
+        self._pageIndex = 1
+        self._groupListData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/Members/{1}/".format(groupID, self._pageIndex))
         self._memberObjectList = []
-        for _groupMemberData in self._groupListData["Response"]["results"]:
-            self._memberObjectList.append(GroupMember(_groupMemberData))
+        while self._groupListData["Response"]["hasMore"]:
+            for _groupMemberData in self._groupListData["Response"]["results"]:
+                self._memberObjectList.append(GroupMember(_groupMemberData))
+            self._pageIndex += 1
+            self._groupListData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/GroupV2/{0}/Members/{1}/".format(groupID, self._pageIndex))
+            await asyncio.sleep(0.5)
         return self._memberObjectList

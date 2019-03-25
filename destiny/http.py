@@ -49,6 +49,7 @@ class GatewaySession:
         """
         await self._event_handler._trigger_event("_trigger_on_get_request", request)
         async with self.session.get(urllib.parse.quote(request, safe=':/?&=,.'), headers=self.headers) as _data:
+            await self._event_handler._trigger_event("_trigger_on_raw_data_recieve", _data)
             self._requestData = await _data.json()
         await self._event_handler._trigger_event("_trigger_on_data_recieve", self._requestData)
         return self._requestData
