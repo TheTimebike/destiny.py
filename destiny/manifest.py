@@ -1,4 +1,4 @@
-import zipfile, os, sys, aiohttp, aysncio_timeout
+import zipfile, os, sys, aiohttp
 from .manifest_reader import ManifestReader
 
 class Manifest:
@@ -33,7 +33,7 @@ class Manifest:
 		with ManifestReader(self.manifests.get(language)) as _handler:
 			_result = _handler.query(hash, definition, identifier)
 			
-		if len(_result) > 0
+		if len(_result) > 0:
 			return json.loads(result[0][0])
 		return None
 			
@@ -41,31 +41,30 @@ class Manifest:
 		if self.manifests.get(language.lower(), None) == None:
 			print("Language Not Found")
 		
-		manifestJson = await self.client.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Manifest/")
+		manifestJson = await self.client.gatewaySession.get_request(self.client.BASE_ROUTE + "/Destiny2/Manifest/")
 		manifestUrl = 'https://www.bungie.net' + manifestJson['Response']['mobileWorldContentPaths'][language]
-        	manifestFileName = manifestUrl.split('/')[-1]
+		manifestFileName = manifestUrl.split('/')[-1]
 		
 		if not os.path.isfile(manifestFileName):
 			downloadedFileName = await self._download_manifest(manifestUrl)
 			if os.path.isfile("./{0}".format("manifest")):
-				zip = zipfile.Zipfile("./{0}".format("manifest"), "r")
+				zip = zipfile.ZipFile("./{0}".format("manifest"), "r")
 				zip.extractall("./")
 				zip.close()
 				os.remove("manifest")
 				
 		self.manifests[language] = manifestFileName
 		
-	async def _download_manifest(request):
-		with asyncio_timeout.timeout(10):
-			async with self.session.get(request) as _data:
-				downloadTarget = os.path.basename("manifest")
-				with open(downloadTarget, "wb") as out:
-					while True:
-						dataChunk = await _data.content.read(1024)
-						if not dataChunk:
-							break
-						out.write(dataChunk)
-				return await response.release()
+	async def _download_manifest(self, request):
+		async with self.client.gatewaySession.session.get(request) as _data:
+			downloadTarget = os.path.basename("manifest")
+			with open(downloadTarget, "wb") as out:
+				while True:
+					dataChunk = await _data.content.read(1024)
+					if not dataChunk:
+						break
+					out.write(dataChunk)
+			return await _data.release()
 		
 		
 		

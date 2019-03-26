@@ -125,7 +125,7 @@ class Client:
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-        self._manifest.update_manifest(language)
+        await self._manifest.update_manifest(language)
         
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
