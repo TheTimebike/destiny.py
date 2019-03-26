@@ -29,7 +29,7 @@ class Manifest:
 		
 		manifestJson = await self.client.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Manifest/")
 		manifestUrl = 'https://www.bungie.net' + manifestJson['Response']['mobileWorldContentPaths'][language]
-        manifestFileName = manifestUrl.split('/')[-1]
+        	manifestFileName = manifestUrl.split('/')[-1]
 		
 		if not os.path.isfile(manifestFileName):
 			downloadedFileName = await self._download_manifest(manifestUrl)
