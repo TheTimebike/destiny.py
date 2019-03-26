@@ -1,5 +1,5 @@
 import zipfile, os, sys, aiohttp, aysncio_timeout
-from .manifest_handler import ManifestHandler
+from .manifest_reader import ManifestReader
 
 class Manifest:
 	def __init__(self, client):
@@ -30,7 +30,7 @@ class Manifest:
 		hash = self._twos_comp_32(hash)
 		identifier = "id"
 		
-		with ManifestHandler(self.manifests.get(language)) as _handler:
+		with ManifestReader(self.manifests.get(language)) as _handler:
 			_result = _handler.query(hash, definition, identifier)
 			
 		if len(_result) > 0
