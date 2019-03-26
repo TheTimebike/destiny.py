@@ -11,6 +11,7 @@ from .components import Components
 from .event_handler import EventHandler
 from .group import Group
 from .groups.group_member import GroupMember
+from .manifest import Manifest
 
 class Client:    
     """Represents a client connection that is used to interact with the API.
@@ -30,6 +31,7 @@ class Client:
 
         self.userAgent = None
         self.apiToken = None
+        self._manifest = Manifest(self)
 
         self._loop = asyncio.get_event_loop() if loop is None else loop
         self._session = aiohttp.ClientSession(loop=self._loop)
@@ -115,18 +117,15 @@ class Client:
             self._userObjectList.append(Membership(bungieUserData))
         return self._userObjectList
     
-    async def get_manifest(self):
+    async def update_manifest(self, language):
         """*This function is a coroutine.*
 
-        A coroutine that returns a dictionary of the Destiny2 manifest.
+        A coroutine that updates the current Destiny2 manifest to the latest version.
 
-        :return: The Destiny2 manifest.
-        :rtype: Dict
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-        self._manifestData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Manifest/")
-        return self._manifestData["Response"]
+        self._manifest.update_manifest(language)
         
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
