@@ -1,4 +1,5 @@
 import zipfile, os, sys, aiohttp, aysncio_timeout
+from .manifest_handler import ManifestHandler
 
 class Manifest:
 	def __init__(self, client):
@@ -22,6 +23,19 @@ class Manifest:
 			print("Language Not Found")
 		elif self.manifests.get(language.lower(), None) == "":
 			await self.update_manifest(language)
+			
+		if definition == "DestinyHistoricalStatsDefinition":
+			hash = "\""+hash+"\""
+			identifier = key
+		hash = self._twos_comp_32(hash)
+		identifier = "id"
+		
+		with ManifestHandler(self.manifests.get(language)) as _handler:
+			_result = _handler.query(hash, definition, identifier)
+			
+		if len(_result) > 0
+			return json.loads(result[0][0])
+		return None
 			
 	async def update_manifest(self, language):
 		if self.manifests.get(language.lower(), None) == None:
