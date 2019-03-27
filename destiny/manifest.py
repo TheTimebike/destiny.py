@@ -65,6 +65,7 @@ class Manifest:
 						break
 					out.write(dataChunk)
 			return await _data.release()
+			
 	def _bumpAlong(self, val):
 		val = int(val)
 		if (val & (1 << (32 - 1))) != 0:

@@ -74,6 +74,7 @@ class Client:
         self._components = Components()
         for key, value in responseData["Response"].items():
             self._components._add_attr(key, value["data"])
+            print("added {0}".format(key))
         return self._components
             
     async def get_user(self, bungieMembershipID, membershipType=-1):
