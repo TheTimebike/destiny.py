@@ -2,6 +2,11 @@ import zipfile, os, sys, aiohttp, json
 from .manifest_reader import ManifestReader
 
 class Manifest:
+	"""This represents the manifest that is used to retrieve item information.
+
+	:param Client client: The client of the application that invokes it.
+
+	"""
 	def __init__(self, client):
 		self.client = client
 		self.manifests = {
@@ -65,7 +70,7 @@ class Manifest:
 						break
 					out.write(dataChunk)
 			return await _data.release()
-			
+
 	def _bumpAlong(self, val):
 		val = int(val)
 		if (val & (1 << (32 - 1))) != 0:

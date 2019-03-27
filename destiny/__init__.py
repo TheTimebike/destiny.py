@@ -10,3 +10,5 @@ from .groups.group_type import GroupType
 from .groups.group_features import GroupFeatures
 from .groups.group_member import GroupMember
 from .group import Group
+from .manifest import Manifest
+from .manifest_reader import ManifestReader

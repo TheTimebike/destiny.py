@@ -101,3 +101,9 @@ Object Reference
 
 .. autoclass:: destiny.GroupMember()
    :members:
+
+.. autoclass:: destiny.Manifest()
+   :members:
+
+.. autoclass:: destiny.ManifestReader()
+   :members:

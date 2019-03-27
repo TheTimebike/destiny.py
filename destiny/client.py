@@ -130,16 +130,19 @@ class Client:
             raise NoGatewayException
         await self._manifest.update_manifest(language)
 
-    async def decode_hash(self, hash, language):
+    async def decode_hash(self, hash, definition, language):
         """*This function is a coroutine.*
 
         A coroutine that uses the Destiny2 manifest to retrieve data related to a hash.
+        If there is no up-to-date manifest downloaded, the manifest handler will automatically
+        download one.
 
         :param str hash: The hash of the data.
+        :param str definition: The definition of the hash. In other words, which table to look for the hash data in.
         :param str language: The language of the manifest to use. Ex: en
 
         """
-        await self._manifest.decode_hash(hash, language)
+        return await self._manifest.decode_hash(hash, definiton, language)
 
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
