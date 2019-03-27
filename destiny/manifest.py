@@ -6,6 +6,8 @@ class Manifest:
 
 	:param Client client: The client of the application that invokes it.
 
+	manifests
+		A dict of the path to each manifest.
 	"""
 	def __init__(self, client):
 		self.client = client
