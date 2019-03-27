@@ -10,7 +10,7 @@ class NoGatewayException(DestinyException):
     def __init__(self):
         super(NoGatewayException, self).__init__("There Is No Open Gateway, Use client.run()")
 
-class NotFound(DestinyException):
+class NotFoundException(DestinyException):
     """An exception that is raised when a request returns no information.
     """
     def __init__(self):
