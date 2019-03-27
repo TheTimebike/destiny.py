@@ -23,7 +23,7 @@ class Manifest:
 			'zh-cht': ''
 		}
 		
-	async def decode_hash(self, hash, definition, language):
+	async def _decode_hash(self, hash, definition, language):
 		if self.manifests.get(language.lower(), None) == None:
 			print("Language Not Found")
 		elif self.manifests.get(language.lower(), None) == "":
@@ -42,7 +42,7 @@ class Manifest:
 			return json.loads(_result[0][0])
 		return None
 			
-	async def update_manifest(self, language):
+	async def _update_manifest(self, language):
 		if self.manifests.get(language.lower(), None) == None:
 			print("Language Not Found")
 		

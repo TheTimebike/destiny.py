@@ -128,7 +128,7 @@ class Client:
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-        await self._manifest.update_manifest(language)
+        await self._manifest._update_manifest(language)
 
     async def decode_hash(self, hash, definition, language):
         """*This function is a coroutine.*
@@ -142,7 +142,9 @@ class Client:
         :param str language: The language of the manifest to use. Ex: en
 
         """
-        return await self._manifest.decode_hash(hash, definiton, language)
+        if self.gatewaySession == None:
+            raise NoGatewayException
+        return await self._manifest._decode_hash(hash, definiton, language)
 
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
