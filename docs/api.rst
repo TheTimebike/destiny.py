@@ -107,3 +107,18 @@ Object Reference
 
 .. autoclass:: destiny.ManifestReader()
    :members:
+
+Exception Reference
+--------------------
+
+.. autoclass:: destiny.NotFoundException()
+   :members:
+
+.. autoclass:: destiny.NoGatewayException()
+   :members:
+
+.. autoclass:: destiny.TokenException()
+   :members:
+
+.. autoclass:: destiny.LanguageNotFoundException()
+   :members:
