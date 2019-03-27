@@ -123,10 +123,23 @@ class Client:
 
         A coroutine that updates the current Destiny2 manifest to the latest version.
 
+        :param str language: The language of the manifest to use. Ex: en
+
         """
         if self.gatewaySession == None:
             raise NoGatewayException
         await self._manifest.update_manifest(language)
+
+    async def decode_hash(self, hash, language):
+        """*This function is a coroutine.*
+
+        A coroutine that uses the Destiny2 manifest to retrieve data related to a hash.
+
+        :param str hash: The hash of the data.
+        :param str language: The language of the manifest to use. Ex: en
+
+        """
+        await self._manifest.decode_hash(hash, language)
 
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
