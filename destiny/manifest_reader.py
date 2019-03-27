@@ -9,6 +9,13 @@ class ManifestReader:
 		sql = """
 			  SELECT json from {0}
 			  WHERE {1} = {2}
-			  """.format(definition, identifier, hash)
+			  """.format(definiton, identifier, hash)
 		self.cursor.execute(sql)
 		return self.cursor.fetchall()
+	
+	def __enter__(self):
+		return self
+
+	def __exit__(self, *args):
+		self.cursor.close()
+		self.connection.close()

@@ -1,4 +1,4 @@
-import zipfile, os, sys, aiohttp
+import zipfile, os, sys, aiohttp, json
 from .manifest_reader import ManifestReader
 
 class Manifest:
@@ -27,14 +27,13 @@ class Manifest:
 		if definition == "DestinyHistoricalStatsDefinition":
 			hash = "\""+hash+"\""
 			identifier = key
-		hash = self._twos_comp_32(hash)
 		identifier = "id"
 		
 		with ManifestReader(self.manifests.get(language)) as _handler:
 			_result = _handler.query(hash, definition, identifier)
 			
 		if len(_result) > 0:
-			return json.loads(result[0][0])
+			return json.loads(_result[0][0])
 		return None
 			
 	async def update_manifest(self, language):
@@ -65,6 +64,3 @@ class Manifest:
 						break
 					out.write(dataChunk)
 			return await _data.release()
-		
-		
-		
