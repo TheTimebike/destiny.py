@@ -5,7 +5,7 @@ class MilestoneType:
 			1: ["Tutorial", 1],
             2: ["One-Time", 2],
 			3: ["Weekly", 3],
-			4: ["Daily", 4].
+			4: ["Daily", 4],
 			5: ["Special", 5]
         }
         self.type = self._conversion[milestoneType][0]
