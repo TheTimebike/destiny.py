@@ -18,6 +18,7 @@ class ManifestReader:
         :param str hash: The hash of the data.
         :param str definition: Which table to look for data relating to the hash in.
 		:param str identifier: The data to compare the hash to in the table.
+		
 		"""
 		sql = """
 			  SELECT json from {0}
