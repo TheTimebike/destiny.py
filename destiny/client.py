@@ -12,6 +12,7 @@ from .event_handler import EventHandler
 from .group import Group
 from .groups.group_member import GroupMember
 from .manifest import Manifest
+from .milestone import Milestone
 
 class Client:    
     """Represents a client connection that is used to interact with the API.
@@ -254,3 +255,11 @@ class Client:
         if self._groupData.get("Response", None) != None:
             return Group(self._groupData)
         return None
+    
+    async def get_milestones(self):
+        if self.gatewaySession == None:
+            raise NoGatewayException
+        
+        self._milestoneData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Milestones/")
+        self._hashData = await self.decode_hash(self._milestoneData["Response"]["milestoneHash"], "DestinyMilestoneDefinition", "en")
+        return Milestone(self._hashData)
