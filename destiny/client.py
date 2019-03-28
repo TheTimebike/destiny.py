@@ -80,12 +80,12 @@ class Client:
     async def get_user(self, bungieMembershipID, membershipType=-1):
         """*This function is a coroutine.*
 
-        A function that returns a ProfileBundle object with user data. Returns None if not found.
+        A function that returns a ProfileBundle object with user data. 
 
         :param str bungieMembershipID: The ID of the bungie account.
         :param str membershipType: The membershipType of the bungie account. 
 
-        :return: A ProfileBungle object containing the user data.
+        :return: A ProfileBungle object containing the user data. Returns None if not found.
         :rtype: ProfileBundle
         """
         if self.gatewaySession == None:
@@ -100,12 +100,12 @@ class Client:
     async def search_for_user(self, name, membershipType=-1):
         """*This function is a coroutine.*
 
-        A coroutine that returns a list of Membership objects containing data for the users that match the search. Returns an empty list if none are found.
+        A coroutine that returns a list of Membership objects containing data for the users that match the search.
 
         :param str name: The string that the API will return username matches for.
         :param str membershipType: The membershipType of the bungie account.
 
-        :return: A list of Membership objects containing the user data.
+        :return: A list of Membership objects.
         :rtype: List
         """
         if self.gatewaySession == None:
@@ -152,13 +152,13 @@ class Client:
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Components object with profile data. Returns None if not found.
+        A coroutine that returns a Components object with profile data.
 
         :param str membershipID: The ID of the bungie account.
         :param str membershipType: The membershipType of the bungie account.
         :param list components: A list of the data that will be requested from the API.
 
-        :return: A Components object containing the profile data.
+        :return: A Components object containing the profile data. Returns None if not found.
         :rtype: Components
         """
         if self.gatewaySession == None:
@@ -174,14 +174,14 @@ class Client:
     async def get_character(self, membershipID, characterID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Components object with character-specific data. Returns None if not found.
+        A coroutine that returns a Components object with character-specific data.
 
         :param str membershipID: The ID of the bungie account.
         :param str characterID: The ID of the character that is connected to the bungie account.
         :param str membershipType: The membershipType of the bungie account.
         :param list components: A list of the data that will be requested from the API.
 
-        :return: A Components object containing the character data.
+        :return: A Components object containing the character data.  Returns None if not found.
         :rtype: Components
         """
         if self.gatewaySession == None:
@@ -197,14 +197,14 @@ class Client:
     async def get_vendors(self, membershipID, characterID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Components object with character-specific vendor data. Returns None if not found
+        A coroutine that returns a Components object with character-specific vendor data.
 
         :param str membershipID: The ID of the bungie account.
         :param str characterID: The ID of the character that is connected to the bungie account.
         :param str membershipType: The membershipType of the bungie account.
         :param list components: A list of the data that will be requested from the API.
 
-        :return: A Components object containing the vendor data.
+        :return: A Components object containing the vendor data. Returns None if not found.
         :rtype: Components
         """
         if self.gatewaySession == None:
@@ -220,11 +220,11 @@ class Client:
     async def get_group(self, groupID):
         """*This function is a coroutine*
 
-        A coroutine that returns a Group object from a groupID. Returns None if not foumd.
+        A coroutine that returns a Group object from a groupID.
 
         :param str groupID: The ID of the group to find.
 
-        :return: A Group object containing the group data.
+        :return: A Group object containing the group data. Returns None if not found.
         :rtype: Group
         """
 
@@ -239,12 +239,12 @@ class Client:
     async def search_for_group(self, name, groupType):
         """*This function is a coroutine.*
 
-        A coroutine that returns a Group object from a name and group type. Returns None if not found.
+        A coroutine that returns a Group object from a name and group type.
 
         :param str name: The string of the group name to search for
         :param str groupType: The type of group to search for. 0 for group, 1 for clan.
 
-        :return: A Group object containing the group data.
+        :return: A Group object containing the group data. Returns None if not found.
         :rtype: Group
         """        
         if self.gatewaySession == None:
