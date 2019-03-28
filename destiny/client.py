@@ -257,11 +257,19 @@ class Client:
         return None
     
     async def get_milestones(self):
+        """*This function is a coroutine*
+
+        A coroutine that returns a list containing the milestone data from the Destiny2 API.
+
+        :return: A list containing the milestone data in a dict. Returns an empty list if not found.
+        :rtype: List
+        """
         if self.gatewaySession == None:
             raise NoGatewayException
         
         self._milestoneData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Milestones/")
         self._milestoneList = []
         for key, attr in self._milestoneData["Response"].items():
-            self._milestoneList.append(Milestone(attr, await self.decode_hash(attr["milestoneHash"], "DestinyMilestoneDefinition", "en")))
+            self._milestoneList.append(attr)
+        #    self._milestoneList.append(Milestone(attr, await self.decode_hash(attr["milestoneHash"], "DestinyMilestoneDefinition", "en")))
         return self._milestoneList
