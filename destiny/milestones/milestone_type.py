@@ -1,4 +1,6 @@
 class MilestoneType:
+    """
+    """
 	def __init__(self, milestoneType):
 		self._conversion = {
             0: ["Unknown", 0],
