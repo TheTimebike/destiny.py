@@ -141,6 +141,9 @@ class Client:
         :param str definition: The definition of the hash. In other words, which table to look for the hash data in.
         :param str language: The language of the manifest to use. Ex: en
 
+        :return: The data for the decoded hash. Returns None if not found. 
+        :rtype: dict
+
         """
         if self.gatewaySession == None:
             raise NoGatewayException
