@@ -261,4 +261,4 @@ class Client:
             raise NoGatewayException
         
         self._milestoneData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Milestones/")
-        return Milestone(client, self._milestoneData["Response"]["milestoneHash"])
+        return Milestone(client, self._milestoneData["Response"])
