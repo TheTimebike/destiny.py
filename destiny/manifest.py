@@ -29,7 +29,7 @@ class Manifest:
 		if self.manifests.get(language.lower(), None) == None:
 			print("Language Not Found")
 		elif self.manifests.get(language.lower(), None) == "":
-			await self.update_manifest(language)
+			await self._update_manifest(language)
 			
 		if definition == "DestinyHistoricalStatsDefinition":
 			hash = "\""+hash+"\""

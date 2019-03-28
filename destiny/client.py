@@ -148,7 +148,7 @@ class Client:
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-        return await self._manifest._decode_hash(hash, definiton, language)
+        return await self._manifest._decode_hash(hash, definition, language)
 
     async def get_profile(self, membershipID, membershipType=-1, components=[]):
         """*This function is a coroutine.*
@@ -261,4 +261,7 @@ class Client:
             raise NoGatewayException
         
         self._milestoneData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/Milestones/")
-        return Milestone(client, self._milestoneData["Response"])
+        self._milestoneList = []
+        for key, attr in self._milestoneData["Response"].items():
+            self._milestoneList.append(Milestone(attr, await self.decode_hash(attr["milestoneHash"], "DestinyMilestoneDefinition", "en")))
+        return self._milestoneList
