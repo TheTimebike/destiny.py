@@ -33,6 +33,7 @@ class GatewaySession:
             
         self.userAgent = userAgent
         self.session = session
+        self.apiToken = apiToken
         self.headers = {"X-API-Key": apiToken}
         self._event_handler = eventHandler
         
@@ -54,7 +55,7 @@ class GatewaySession:
         await self._event_handler._trigger_event("_trigger_on_data_recieve", self._requestData)
         return self._requestData
 
-    async def post_request(self, request):
+    async def post_request(self, request, headers, data):
         """*This function is a coroutine.*
 
         A function that sends instructions to the API.
@@ -63,4 +64,6 @@ class GatewaySession:
 
         """
         await self._event_handler._trigger_event("_trigger_on_post_request", request)
-        self._requestData = self.session.post(request, headers=self.headers)
+        self._requestData = await self.session.post(request, headers=headers, data=data)
+        await self._event_handler._trigger_event("_trigger_on_data_recieve", await self._requestData.json())
+        return await self._requestData.json()

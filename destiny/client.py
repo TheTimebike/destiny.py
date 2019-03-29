@@ -13,6 +13,7 @@ from .group import Group
 from .groups.group_member import GroupMember
 from .manifest import Manifest
 from .milestone import Milestone
+from .authorisation import Authorisation
 
 class Client:    
     """Represents a client connection that is used to interact with the API.
@@ -33,6 +34,8 @@ class Client:
         self.userAgent = None
         self.apiToken = None
         self._manifest = Manifest(self)
+
+        self.authorisation = Authorisation(self)
 
         self._loop = asyncio.get_event_loop() if loop is None else loop
         self._session = aiohttp.ClientSession(loop=self._loop)
@@ -273,3 +276,14 @@ class Client:
             self._milestoneList.append(attr)
         #    self._milestoneList.append(Milestone(attr, await self.decode_hash(attr["milestoneHash"], "DestinyMilestoneDefinition", "en")))
         return self._milestoneList
+
+    async def equip_item(self, characterID, itemID, membershipType, tokenID):
+        self._request = self.BASE_ROUTE + "/Destiny2/Actions/Items/EquipItem/"
+        self._headers = {
+            "X-API-KEY": self.gatewaySession.apiToken,
+            "Authorization": "Bearer " + str(self.authorisation.tokens.get(tokenID)["access_token"])
+        }
+        print(json.dumps(self._headers))
+        self._data = "characterId={0}&itemId={1}&membershipType={2}".format(characterID, itemID, membershipType)
+        self._response = await self.gatewaySession.post_request(self._request, self._headers, self._data)
+        return self._response
