@@ -278,6 +278,17 @@ class Client:
         return self._milestoneList
 
     async def equip_item(self, characterID, itemID, membershipType, tokenID):
+        """*This function is a coroutine.
+
+        A coroutine that moves an item from a characters inventory into a characters equipped slot.
+        Note that it does not move the item from another character or the vault.
+
+        :param str characterID: The ID of the character to equip the item on.
+        :param str itemID: The ID of the item to equip on the character.
+        :param str membershipType: The numerical value of an accounts' membership type. IE: 1,2 or 4
+        :param str tokenID: The ID of the *bungie net account* that the character is linked to.
+
+        """
         self._request = self.BASE_ROUTE + "/Destiny2/Actions/Items/EquipItem/"
         self._headers = {
             "X-API-Key": self.gatewaySession.apiToken,
@@ -291,4 +302,4 @@ class Client:
         })
         #self._data = "itemId={1}&characterId={0}&membershipType={2}".format(characterID, itemID, membershipType)
         self._response = await self.gatewaySession.post_request(self._request, self._headers, self._data)
-        return self._response
+        return 
