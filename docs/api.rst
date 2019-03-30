@@ -30,11 +30,25 @@ Authorisation
 
    :param str appVersion: The current version of the application. [Optional]
 
-   :param str appID: The ID of the application. [Optional]
+   :param str appID: The ID of the application. [Optional] [Required for authorisation]
+
+   :param str appSecret: The secret of the application. [Optional] [Required for authorisation]
 
    :param str appWebsite: The website for the application. [Optional]
 
    :param str appEmail: The email for the application. [Optional]
+
+   Destiny.py also includes an access token manager to make it easier to send requests that need authorisation.
+   Authentication tokens are stored by the ID of the *bungie net* account that they are enlisted under.
+   The management system includes automatic refreshing of expired access tokens. To get started, pass an
+   *oAuth* token to ``client.authorisation.get_access_from_oauth()``. get_access_from_oauth is a coroutine and must
+   be awaited.
+
+   The tokens themselves are stored in the ``tokens`` attribute of client.authorisation inside a dictionary.
+
+   .. autoclass:: destiny.Authorisation()
+      :members:
+       
 
 Event Reference
 ---------------

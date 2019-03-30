@@ -1,6 +1,11 @@
 import json
 
 class Authorisation:
+    """Authentication management for the destiny.py client.
+
+    tokens
+        A dict that stores the current tokens that the client has.
+    """
     def __init__(self, client):
         self.client = client
         self.tokens = {}
@@ -16,12 +21,22 @@ class Authorisation:
         for key, attr in self.tokens.items():
             await self._get_access_from_refresh(attr["refresh_token"])
 
-    async def _get_access_from_oauth(self, token):
+    async def get_access_from_oauth(self, token):
+        """Request an access token from the Bungie API that allows you to make authenticated requests on their behalf.
+        
+        :param str token: A valid oAuth token.
+
+        """
         self._oauthToken = await self._request_access_from_oauth(token)
         self.tokens[self._oauthToken["membership_id"]] = self._oauthToken
         self._save_tokens()
 
-    async def _get_access_from_refresh(self, token):
+    async def get_access_from_refresh(self, token):
+        """Request an access token from the Bungie API that allows you to make authenticated requests on their behalf.
+        
+        :param str token: A valid refresh token.
+
+        """
         self._oauthToken = await self._request_access_from_refresh(token)
         self.tokens[self._oauthToken["membership_id"]] = self._oauthToken
         self._save_tokens()

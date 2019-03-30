@@ -12,4 +12,5 @@ from .groups.group_member import GroupMember
 from .group import Group
 from .manifest import Manifest
 from .manifest_reader import ManifestReader
+from .authorisation import Authorisation
 from .errors import *

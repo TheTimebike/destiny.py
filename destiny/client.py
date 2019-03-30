@@ -278,7 +278,7 @@ class Client:
         return self._milestoneList
 
     async def equip_item(self, characterID, itemID, membershipType, tokenID):
-        """*This function is a coroutine.
+        """*This function is a coroutine*.
 
         A coroutine that moves an item from a characters inventory into a characters equipped slot.
         Note that it does not move the item from another character or the vault.
