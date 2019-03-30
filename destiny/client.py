@@ -280,10 +280,15 @@ class Client:
     async def equip_item(self, characterID, itemID, membershipType, tokenID):
         self._request = self.BASE_ROUTE + "/Destiny2/Actions/Items/EquipItem/"
         self._headers = {
-            "X-API-KEY": self.gatewaySession.apiToken,
-            "Authorization": "Bearer " + str(self.authorisation.tokens.get(tokenID)["access_token"])
+            "X-API-Key": self.gatewaySession.apiToken,
+            "Authorization": "Bearer {0}".format(self.authorisation.tokens[tokenID]["access_token"]),
+            "Content-Type": "application/json"
         }
-        print(json.dumps(self._headers))
-        self._data = "characterId={0}&itemId={1}&membershipType={2}".format(characterID, itemID, membershipType)
+        self._data = json.dumps({
+            "itemId": itemID,
+            "characterId": characterID,
+            "membershipType": membershipType
+        })
+        #self._data = "itemId={1}&characterId={0}&membershipType={2}".format(characterID, itemID, membershipType)
         self._response = await self.gatewaySession.post_request(self._request, self._headers, self._data)
         return self._response

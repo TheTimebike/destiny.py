@@ -5,7 +5,6 @@ class EventHandler:
     
     async def _trigger_event(self, event, *argv):
         function = getattr(self, event)
-        #self.focus._loop.create_task(await function(argv))
         await function(argv)
     
     async def _trigger_on_run(self, params):
@@ -26,4 +25,4 @@ class EventHandler:
             
     async def _trigger_on_post_request(self, params):
         if hasattr(self, "on_post_request"):
-            await self.on_post_request(params[0])
+            await self.on_post_request(params[0], params[1], params[2])

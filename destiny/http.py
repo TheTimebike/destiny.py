@@ -63,7 +63,7 @@ class GatewaySession:
         :param str request: The URL for the request to be made to.
 
         """
-        await self._event_handler._trigger_event("_trigger_on_post_request", request)
+        await self._event_handler._trigger_event("_trigger_on_post_request", request, headers, data)
         self._requestData = await self.session.post(request, headers=headers, data=data)
         await self._event_handler._trigger_event("_trigger_on_data_recieve", await self._requestData.json())
         return await self._requestData.json()
