@@ -19,7 +19,7 @@ class Authorisation:
             self.tokens = json.load(out)
 
         for key, attr in self.tokens.items():
-            await self._get_access_from_refresh(attr["refresh_token"])
+            await self.get_access_from_refresh(attr["refresh_token"])
 
     async def get_access_from_oauth(self, token):
         """Request an access token from the Bungie API that allows you to make authenticated requests on their behalf.

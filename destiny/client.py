@@ -300,6 +300,37 @@ class Client:
             "characterId": characterID,
             "membershipType": membershipType
         })
-        #self._data = "itemId={1}&characterId={0}&membershipType={2}".format(characterID, itemID, membershipType)
+    
+        self._response = await self.gatewaySession.post_request(self._request, self._headers, self._data)
+        return 
+
+    async def move_item(self, characterID, itemID, itemHash, itemAmount, toVault, membershipType, tokenID):
+        """*This function is a coroutine*
+
+        A coroutine that moves an item to or from a players vault. Keep in mind that this cannot move items
+        between characters.
+
+        :param str characterID: The ID of the character to move the item to or from.
+        :param str itemID: The ID of the item to move.
+        :param int itemAmount: The amount of the item to move.
+        :param bool toVault: If the item should be moved to or from the vault. True = to vault, False = from vault
+        :param str membershipType: The numerical value of an accounts' membership type. IE: 1,2 or 4
+        :param str tokenID: The ID of the *bungie net account* that the character is linked to.
+
+        """
+        self._request = self.BASE_ROUTE + "/Destiny2/Actions/Items/TransferItem/"
+        self._headers = {
+            "X-API-Key": self.gatewaySession.apiToken,
+            "Authorization": "Bearer {0}".format(self.authorisation.tokens[tokenID]["access_token"]),
+            "Content-Type": "application/json"
+        }    
+        self._data = json.dumps({
+            "characterId": characterID,
+            "itemId": itemID,
+            "stackSize": itemAmount,
+            "transferToVault": toVault,
+            "itemReferenceHash": itemHash,
+            "membershipType": membershipType
+        })    
         self._response = await self.gatewaySession.post_request(self._request, self._headers, self._data)
         return 
