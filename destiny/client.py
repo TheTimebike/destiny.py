@@ -77,8 +77,11 @@ class Client:
     def _generate_component(self, responseData):
         self._components = Components()
         for key, value in responseData["Response"].items():
-            self._components._add_attr(key, value["data"])
-            print("added {0}".format(key))
+            try:
+                self._components._add_attr(key, value["data"])
+                print("added {0}".format(key))
+            except:
+                pass
         return self._components
             
     async def get_user(self, bungieMembershipID, membershipType=-1):
@@ -334,3 +337,11 @@ class Client:
         })    
         self._response = await self.gatewaySession.post_request(self._request, self._headers, self._data)
         return 
+
+    async def get_item(self, itemID, membershipID, membershipType, components=[]):
+        self._components = ",".join(components)
+        self._request = self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Item/{2}/?components={3}".format(membershipType, membershipID, itemID, self._components)
+        self._itemData = await self.gatewaySession.get_request(self._request)
+        if self._itemData.get("Response", None) != None:
+            return self._generate_component(self._itemData)
+        return None
