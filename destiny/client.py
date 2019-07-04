@@ -170,7 +170,20 @@ class Client:
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-
+        if components == []:
+            components = [
+                "Profiles",
+                "VendorReceipts",
+                "ProfileInventories",
+                "ProfileCurrencies",
+                "ProfileProgression",
+                "Characters",
+                "CharacterInventories",
+                "CharacterProgressions",
+                "CharacterRenderData",
+                "CharacterActivities",
+                "CharacterEquipment"
+            ]
         componentList = ",".join(components)
 
         self._profileData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/?components={2}".format(membershipType, membershipID, componentList))
@@ -193,7 +206,15 @@ class Client:
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-
+        if components == []:
+            components = [
+                "Characters",
+                "CharacterInventories",
+                "CharacterProgressions",
+                "CharacterRenderData",
+                "CharacterActivities",
+                "CharacterEquipment"
+            ]
         componentList = ",".join(components)
 
         self._profileData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/?components={3}".format(membershipType, membershipID, characterID, componentList))
@@ -216,7 +237,12 @@ class Client:
         """
         if self.gatewaySession == None:
             raise NoGatewayException
-
+        if components == []:
+            components = [
+                "Vendors",
+                "VendorCategories",
+                "VendorSales",
+            ]
         componentList = ",".join(components)
 
         self._vendorData = await self.gatewaySession.get_request(self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Character/{2}/Vendors/?components={3}".format(membershipType, membershipID, characterID, componentList))
@@ -339,9 +365,44 @@ class Client:
         return 
 
     async def get_item(self, itemID, membershipID, membershipType, components=[]):
+        if components == []:
+            components = [
+                "ItemInstances",
+                "ItemObjectives",
+                "ItemPerks",
+                "ItemRenderData",
+                "ItemStats",
+                "ItemSockets",
+                "ItemTalentGrids",
+                "ItemCommonData",
+                "ItemPlugStates"
+            ]
         self._components = ",".join(components)
         self._request = self.BASE_ROUTE + "/Destiny2/{0}/Profile/{1}/Item/{2}/?components={3}".format(membershipType, membershipID, itemID, self._components)
         self._itemData = await self.gatewaySession.get_request(self._request)
         if self._itemData.get("Response", None) != None:
             return self._generate_component(self._itemData)
         return None
+
+    async def GET_EVERYTHING(self, membershipID, membershipType):
+        self._profileData = await self.get_profile(
+            membershipID,
+            membershipType,
+        )
+        self._dictConversion = self._profileData.__dict__
+        for attr in self._dictConversion["profileInventory"]["items"]:
+            attr["itemHashObject"] = await self.decode_hash(attr["itemHash"], "DestinyInventoryItemDefinition", "en")
+        for key, attr in self._dictConversion["profileProgression"]["checklists"].items():
+            print(attr)
+            attr["progressHashObject"] = await self.decode_hash(key, "DestinyChecklistDefinition", "en")
+        for key, attr in self._dictConversion["characters"].items():
+            attr["raceObject"] = await self.decode_hash(attr["raceHash"], "DestinyRaceDefinition", "en")
+            attr["genderObject"] = await self.decode_hash(attr["genderHash"], "DestinyGenderDefinition", "en")
+            attr["classObject"] = await self.decode_hash(attr["classHash"], "DestinyClassDefinition", "en")
+            attr["statsObject"] = []
+            for subKey, subAttr in attr["stats"].items():
+                attr["statsObject"].append(await self.decode_hash(subKey, "DestinyStatDefinition", "en"))
+        
+        return self._dictConversion
+
+        
